@@ -1,0 +1,81 @@
+v2020.9.c.1
+
+
+
+v2020.9.b.5
+- burn images now work
+- $remove works again
+
+I've rebuilt the options menu. This mostly meant ripping out and replacing the most horrible code in the game (everyone involved, including me, had just hacked in stuff in a hurry) but it also means
+- you can change key bindings again
+- settings are specified in a JSON entities file, so you can add new ones. This isn't useful at the moment, because there's no easy way to wire them up, but it does open the door to (a) mods with settings (b) mnods that allow you to switch on/off content-driven behaviour.
+- setting values (including keybinds) are now stored in config.ini, not in the Windows registry (or whatever exotic equivalents UnityPlayerPrefs uses in OSX and Linux). There's a one-time migration process that *should* import them painlessly. Let me know if it doesn't.
+
+
+
+v2020.8.a.4; "The Mirror and the Lime"
+- images weren't working in some mod /images subfolders. They should now.
+- merge-overwriting entities didn't quite work as advertised (property operations failed when merge-overwriting). This is fixed.
+- fixed a subtle and horrible bug with expulsion filters, which now work again.
+
+
+v2020.8.a.3; "The Bottled Ink"
+- available languages are now specified by the 'culture' entity in /core/cultures - which you can mod by adding a culture entity to your json.
+- 'culture' also specifies UI labels, so you can add them for a given localisation
+- you can also specify which base font script a mod will use - Latin, cyrillic, or 'cjk' for a font which should support Simplified Chinese, Japanese and Korean. This is pretty primitive and you're out of luck if you want to localise into e.g. Arabic. I'll update if there's any demand for that.
+- in response to modder pleas: it is now possible to have the same entity id specified twice in two different mods (or in the same mod, if you're being weird). Specifying an entity id in a mod for an existing entity will merge-overwrite the two, with the mod values taking precedence. This is also how mods will now affect existing entities. NB, then
+(a) if you want to remove existing values from a core entity, specify an empty string or dictionary [I'm much happier with this, because it makes altered behaviour explicit]
+(b) you no longer want or need to use 'extends' to build on an entity with the same id - just merge-overwrite it.
+
+v2020.8.a.2; "The Correspondence of Origin"
+
+- updated to latest major version of Unity
+- /images/ui added to modding framework. You can now use tablecoverimage:, tablesurfaceimage:, and tableedgeimage: on Legacies to customise table appearance.
+- Fixed Chinese loc
+- Fixed Chinese and Russian slot labels, which were showing in English
+- loc files renamed to loc_[culture]
+- loc files are now loaded *after* mods - so if you've extended an entity in your mod, any relevant loc will still apply to it
+- you can now add loc files to a mod (or create a mod consisting only of loc files) - just add loc json files to loc/loc_[culture]
+
+v2020.8.a.1; "The Solution of Memory"
+
+- substantial code rewrite; there may be odd bugs.
+- mod framework rework and upgrade
+- Steam Workshop integration, styled as 'The Invisible Serapeum'. (GOG players: the mods will work if you install them locally.)
+
+v2020.6.c.1; "Standing Water Breeds Reptiles"
+
+- Biedde's Blade now causes unstanchable wounds when used with Steel and Science
+- Smuggling now puts the Underworld Connection in the Operation
+- typo fixes
+
+v2020.6.b.1; "Urizen's Book of Gold, or, Why I Don't Usually Put Patches Out On Friday PM"
+MAIN GAME
+- Fixed missing art for Overexposure
+
+EXILE
+- 'A crucial missing link made it impossible to get one of the more obscure endings. I've fixed that.'  Now actually fixed.
+- Profane Weapon repurchase now cleanly replaces exhausted Profane Weapon
+- Addresses (Office, Warehouse, Townhouse, Villa) now have the Deception aspect, though you can't use two addresses topether to erase a Trace.
+- Biedde's Blade is now available in appropriate cities.
+- The Old Retainer will no longer follow you if exhausted when you change cities
+- Clarified that you can't cause a revolution in a city unless it's Troubled
+- Removed the word 'small' when referring to Trace risks.
+
+
+v2020.6.a.1: "The Meridian Unites"
+EXILE
+
+BALANCING
+- The Sunset, Dawn and Night opportunities all now have relevant Principle aspects.
+- The Night opportunity now has the Deception aspect.
+- Added an extra Sea draw to Seaports.
+
+
+BUG FIXES
+- A crucial missing link made it impossible to get one of the more obscure endings. I've fixed that.
+- Profane Weapon purchase opportunity shouldn't have been unique, and it's not now.
+- Missing art references fixed for Lionsmith shrine Venice, Colonel shrine Valletta, Book of Suns page purchase ops from zones 2 and 3, Momentum, and Merry Feaster's Carcass. 
+- The Shrine of the Nameless art was meant to be plain black, but it was reading as a mistake to players, so Lottie's drawn something charming.
+- I can confirm that where you were referred to as '[your mother's] son' that was a typo, or rather braino. The gender of Exile characters is unspecified as usual, and this isn't a weird subtle lore point.
+

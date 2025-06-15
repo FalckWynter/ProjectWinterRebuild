@@ -1,0 +1,32 @@
+{
+    "verbs": [
+        {
+            "id": "pc",
+          "label": "Librarian",
+          "category": "Someone",
+          "controllable": true,
+            "description": "We are what we do.",
+			 "slot": {
+                "id": "consider",
+                "label": "Consider",
+                "description": "There's always more to know.",
+                "required": {"readable":1,"ability":1,"memory":1},
+                "forbidden": {}
+            }
+        },
+        {
+            "id": "npc.serena",
+          "label": "Dr Serena Blackwood",
+          "category": "Someone",
+          "controllable": false,
+            "description": "This was home, once.",
+			 "slot": {
+                "id": "respond",
+                "label": "Respond",
+                "required": {},
+                "forbidden": {}
+            },
+            "icon":"serena"
+        }
+    ]
+}

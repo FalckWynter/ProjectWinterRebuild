@@ -1,0 +1,1570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{A2BC0E7C-B9AD-50DB-0EB0-8A372B8957CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>QFramework.CoreKit</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>UNITY_2022_3_34;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169;USG0001</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorStyle>Legacy</UnityProjectGeneratorStyle>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2022.3.34f1c1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\CharPtr.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\LoadModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\StringLib\StringRange.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\ICodeGenTemplate.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\DataType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Attributes\PackageKitGroupAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Window\PackageKitWindow.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\MathModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Modules\MoonSharpModuleConstantAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LiveCodingKit\Editor\LiveCodingKitSetting.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Serialization\SerializationExtensions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockParagraph.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\OpCodeMetadataType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Lerp.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\View\PackageManagerView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Command\LoginCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\DebuggerCaps.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUITreeView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\IPackageTypeConfigModel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GridKit\DynaGrid.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\Coroutine.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineLiteral.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\HardwiredDescriptors\HardwiredMethodMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\PropertyTableAssigner.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IO\StandardIOFileUserDataBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounters\DummyPerformanceStopwatch.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\StandardFileType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Window\RenderInfo\PackageKitScriptViewRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\FastStack.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Errors\DynamicExpressionException.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Window\RenderInfo\PackageKitViewRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\IfStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpUserDataMetamethodAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphAndNodeEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnEndDragEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\FluentGUIStyle.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnUpdateSelectedEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerStay2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\IWireableDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\PackageManagerModel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphPreferences.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\APIVersion.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockHtml.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnSelectEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\IO\BinDumpBinaryReader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\DebuggerLogic\IAsyncDebuggerClient.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineHtml.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\ForEachLoopStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IO\BinaryEncoding.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\CustomCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Model\PropertyAPIRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\Singleton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\CustomCodeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\1.CSharp\4.SystemReflectionExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Writer\StringCodeWriter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphResources.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\GUIGraphNode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\HardwiredDescriptors\DefaultValue.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Converters\TableConversions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIBox.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IoModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\IOCKit\IOCKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\EventMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\DebuggerAction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIToolbarView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\TableKit\Script\TableKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\GUIGraph.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\ActionKitCurrentScene.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Custom.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\CallbackArguments.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\ReturnStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\ScriptFunctionDelegate.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\MemberDescriptorAccess.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDStyle.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Mono\OnBecameVisibleEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionExitEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IO\FileUserDataBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\TabCustomCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Queue\MonoActionQueue.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\CodeGenKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDHandlerNaviagte.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerExitEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_IExecutionContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\AutoSaveDump.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\PlatformAccessorBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\IMGUIAbstractLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\ErrorHandlingModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Converters\StringConversions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnPointerDownEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\CallbackFunction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Errors\InternalErrorException.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\NodeBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\TableConstructor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\BreakStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\ScriptableSingletonProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\IOverloadableMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\EventFacade.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Mono\OnBecameInvisibleEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Root\EasyInspectorEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Symbol\CloseBraceCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\TailCallData.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDPreferences.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\UserDataRegistries\TypeDescriptorRegistry.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIXMLView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Factory\IObjectFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpHiddenAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\PackageRepository.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Loop.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\AssignmentStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\DebuggerLogic\AsyncDebugger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnPointerClickEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\Rules.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\OpCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\Setting\CodeGenKitSettingEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\LuaState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpHideMemberAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Converters\ScriptToClrConversions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\LiteralExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LiveCodingKit\Editor\LiveCodingKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\PropertyAPIAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnBeginDragEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDEditorAsset.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\ClosureContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Actions\LocaleKitChangeLanguageAction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\TableModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\Service\IPackageManagerServer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Stopwatch.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\WellKnownSymbols.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUISpace.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\NamespaceCodeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\DynamicExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\LinqHelpers.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\JsonKit\VectorTemplates.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounters\PerformanceStopwatch.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionEnterEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\Editor\MoonSharpImporter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererinlineDelimiter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Symbol\OpenBraceCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnPointerUpEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Parallel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Executor\MonoUpdateActionExecutor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\Infos\BindInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Symbol\EmptyLineCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Callback.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Attributes\DisplayNameCNAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\GotoStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\IMGUILayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\BindablePropertyKit\PlayerPrefsFloatProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIAreaLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpVisibleAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\HardwiredDescriptors\HardwiredUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\DictionaryPool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphUtilities.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDImporter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\CodeGenHelper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\SingletonProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\DotNetCorePlatformAccessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\2.UnityEngineTransformExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphGUILayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\MultiDictionary.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\UIElementExtensions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerEnterEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\WatchType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Factory\DefaultObjectFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\CompositeUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\DescriptorHelpers.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ConsoleKit\LogModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\Docker.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Pool\IPoolable.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\UserDataRegistries\ExtensionMethodsRegistry.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\ViewController.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineEmphasis.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\Bind\IBind.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Errors\InterpreterException.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\ScriptOptions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\ViewControllerInspector.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\RenderEndCommandExecutor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnCancelEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\IUserDataType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Modules\CoreModules.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\1.CSharp\1.SystemStringExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\IMDLayoutBuilder.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounterType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\AdjustmentExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIGenericMenu.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LogKit\Depreacted.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\IO\UndisposableStream.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Lexer\TokenType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Attributes\DisplayNameENAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\APIDoc.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDBlockLine.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\IMGUILayoutRoot.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRenderInlineHTMLEntry.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Framework.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\OverloadedMethodMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDAsset.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_Errors.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\PackageData.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphEditorGUI.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Utilities\MutableTuple.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\BuildTimeScopeFrame.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\RuntimeScopeBlock.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\ActionKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Pool\IPool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\IGeneratorUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnDropEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUITextArea.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockThematicBreak.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Data\LanguageEvent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\Base\FrameworkClrBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDViewer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\IDebugger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Coroutine.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\Guidline\Editor\Guideline.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Factory\NonPublicObjectFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\Service\PackageManagerServer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\FrameworkWin8.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\OsTimeModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\IMGUIView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expression_.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Attributes\PackageKitRenderOrderAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\Editor\UnityEditorScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\1.CSharp\2.SystemIOExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\RepeatStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDBlockContent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphRenameFixAssetProcessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\SourceRef.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\ReferenceEqualityComparer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\0.UnityEngineObjectExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\ICodeTemplate.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnSubmitEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\IClosureBuilder.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\MonoSingletonProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Framework\IAction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\DebugService.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Delay.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\FunctionDefinitionExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\ForLoopStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnDeselectEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\DynValue.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockHeading.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\CallStackItemFlags.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\IO\BinDumpBinaryWriter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\BindSearchHelper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIScrollLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\FileSystemScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Utilities\PackageKitAssemblyCache.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\LoopTracker.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\PrefabSingletonProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\YieldRequest.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\ChunkStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\1.CSharp\3.SystemCollectionsExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\FrameworkPCL.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\ProxyObjects\IProxyFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Components\LocaleUnityEvent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\Bind\Bind.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionExit2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\Bind\IBindOld.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\FunctionDefinitionStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_InstructionLoop.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\UserData.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\6.UnityEngineUIGraphicExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CodeAnalysis\AstNode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\IMDActions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\RefIdObject.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\MemberDescriptors\ArrayMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphEditorBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\BasicModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\IMDBuilder.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnPointerExitEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\APIDocLocale.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Attributes\DisplayLabelAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IO\FileUserData.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\BinaryOperatorExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\JsonKit\JSONObject.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Framework\IActionExecutor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\OsSystemModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Service\IPackageLoginService.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\ScriptGlobalOptions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ProxyUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\UserDataMemberType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\StandardPlatformAccessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnPointerEnterEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\PersistentMonoSingleton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Task.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\IMGUIHelper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\SafeObjectPool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Errors\SyntaxErrorException.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Factory\CustomObjectFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\DeprecateActionKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\SearchCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\View\RegisterView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIHorizontalLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\StandardEnumUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\ShortCut\AudioSourceShortCutExtensions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\LimitedPlatformAccessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDMenus.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\SourceCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\OpenDetailCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\HardwiredDescriptors\HardwiredMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\DynamicExprExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\REPL\ReplInterpreterScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\CallStackItem.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Root\EasyEditorWindow.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_BinaryDump.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\ClassAPIAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\LocaleKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\CodeGenKitSetting.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\ScriptLoadingContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Instruction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\ScriptExecutionContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpUserDataAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\DynamicModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\ValueTypeDefaultCtorMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\SymbolRef.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\MemberDescriptors\FunctionMemberDescriptorBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\IUserDataMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Command\OpenRegisterWebsiteCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererMarkdown.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\BindablePropertyKit\EditorPrefsBoolProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Converters\NumericConversions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Framework\ICode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\ReflectionSpecialNames.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\LuaLBuffer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphReflection.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDContent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Lexer\LexerUtils.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\DelayFrame.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\CoroutineState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Serialization\Json\JsonNull.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Serialization\Json\JsonTableConverter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererTable.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDBlockContainer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Framework\ICodeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Data\LanguageDefine.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\StringLib\KopiLua_StrLib.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\AsyncExtensions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\Table.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Pool\Pool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Lexer\Lexer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDContentImage.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\LabelStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\QFramework.PackageKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\IScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Modules\ModuleRegister.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\GUIGraphDataCache.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\View\PackageKitLoginView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ConsoleKit\Framework\ConsoleWindow.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\StandardUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\3.UnityEngineMonoBehaviourExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\DispatchingUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Script.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\ImportPackageCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\DebuggerLogic\EmptyDebugSession.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Errors\ScriptRuntimeException.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Writer\ICodeWriter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\InteropRegistrationPolicy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Interface\IPackageKitView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\PrefabUtils.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\APIDescriptionENAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\GUISceneGraph.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\OtherBinds.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\DebugContext.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\Component\OnDeselectUnityEvent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\REPL\ReplHistoryNavigator.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Model\ClassAPIRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\EditorCoroutine.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\SymbolRefType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounters\GlobalPerformanceStopwatch.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\InstructionFieldUsage.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\Bit32Module.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\BuildTimeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\LinkedListIndex.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Components\Bind\AbstractBind.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineAutoLink.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\InteropAccessMode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\BindInspectorLocale.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\FunctionCallExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\SDK\Utilities.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Lexer\Token.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\Editor\QFrameworkRegisterEditorTypesExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\RegistrationPolicies\AutomaticRegistrationPolicy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\IScriptPrivateResource.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIFlexibleSpace.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\5.UnityEngineColorExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\CustomDrawerUtility.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\Closure.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIEnumPopup.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\GUIGraphNodePort.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_Scope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\AbstractBindInspector.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\JsonModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\MonoSingleton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\AutoDescribingUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\PackageManagerInitCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\SerializedPropertyExtensions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDHistroy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnScrollEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\IVariable.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Fast_Interface\Loader_Fast.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Pool\IPoolType.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventSystem\StringEventSystem.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphWindow.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\SDK\Protocol.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\EasyIMGUI.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Debugging\WatchItem.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Command\LogoutCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\LocaleKitEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Framework\CodeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageMaker\View\PackageMakerEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Data\LanguageText.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\PredefinedUserData\EnumerableWrapper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GridKit\EasyGrid.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\MoonSharpVsCodeDebugServer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_UtilityFunctions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\CodeGenKitPipeline.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Service\PacakgeLoginService.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Utilities\UrlHelper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\CrossPlatformGUILayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\BindablePropertyKit\PlayerPrefsBoolProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\PackageManagerState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Model\ClassAPIGroupRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIToggle.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Condition.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUITextField.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\Framework\IMGUIAbstractView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Deprecated.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\SimpleObjectPool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\TreeView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\UsingCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\SDK\DebugSession.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\Tools.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\DebuggerLogic\MoonSharpDebugSession.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIButton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\APIExampleCodeAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Utilities\EditorHttp.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageMaker\Command\PublishPackageCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUISceneGraphInspector.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\MethodAPIAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventSystem\EnumEventSystem.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDContentText.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\ExprListExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_Coroutines.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockQuote.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\7.UnityEngineOthersExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\TablePair.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\CoroutineModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Framework\Attributes\PackageKitIgnoreAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Attributes\IMGUIGraphEnum.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\IPlatformAccessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\RootCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ConsoleKit\Framework\ConsoleModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphEditorAction.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDBlock.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FSMKit\IState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDUtils.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceStatistics.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Framework\Attributes\APIDescriptionCNAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\UpdateCategoriesFromModelCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Components\LocaleText.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageMaker\PackageMaker.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\MethodMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\ViewControllerInspectorLocale.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Modules\MoonSharpModuleMethodAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockList.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\State\PackageKitLoginState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIRectLabelView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\RuntimeScopeFrame.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ConsoleKit\Deprecated\QConsole.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageMaker\Service\UploadPackage.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\EmptyStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\UpdatePackageCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\Drawers\GUIGraphEnumDrawer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Factory\ObjectFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\IOptimizableDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\Command\OpenRegisterViewCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\VerticalSplitView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\8.UnityEngineVectorExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\MonoSingletonPath.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\StringModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\Data\LanguageDefineConfig.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\PropertyMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceResult.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Converters\ClrToScriptConversions.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LiveCodingKit\Editor\LiveCodingKitSettingEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererBlockCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Options\ColonOperatorBehaviour.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\Deprecated.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerExit2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\FastStackDynamic.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphAssetModProcessor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\PredefinedUserData\AnonWrapper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\Scopes\BuildTimeScopeBlock.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LocaleKit\Scripts\LocaleKitConfigView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\4.UnityEngineCameraExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\Processor\Processor_Debugger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\ByteCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Execution\VM\ExecutionState.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\Attributes\MoonSharpPropertyAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Attributes.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\Base\FrameworkBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\ReflectionMemberDescriptors\FieldMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\InvalidScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\IUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\Component\OnSelectUnityEvent.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\Internal\APIDoc\Model\MethodAPIRenderInfo.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\Attributes\DisplayIfAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUILabel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIRectLabel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnDragEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\ISingleton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\ViewControllerInspectorStyle.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\ScopeBlockStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\IO\StreamFileUserDataBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\LuaBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphImporter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\FunctionCallStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\UnityAssetsScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\LogKit\LogKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\Editor\MoonSharpEditorWindow.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\PackageKitLoginApp.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\ReplaceableMonoSingleton.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Code\Language\ClassCodeScope.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\IMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphRenamePopup.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\SymbolRefExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageMaker\SingleFileCreator.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIPopup.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIRectBoxView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\UnaryOperatorExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\0.Unity\1.UnityEngineGameObjectExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\Extension_Methods.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\ViewControllerTemplate.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Modules\MoonSharpModuleAttribute.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Diagnostics\PerformanceCounters\IPerformanceStopwatch.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\WhileStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Login\View\LoginView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataTypes\TypeValidationFlags.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineLink.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\NameSpace_XmlHelp.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineCode.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\LuaStateInterop\LuaBase_CLib.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionStay2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\Internal\GUIGraphRerouteReference.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\RegistrationPolicies\IRegistrationPolicy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIVerticalLayout.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Platforms\PlatformAutoDetector.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\REPL\ReplInterpreter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\MemberDescriptors\ObjectCallbackMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUICustom.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerEnter2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnMoveEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Model\ILocalPackageVersionModel.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Renderer\MDRendererInlineLineBreak.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionStayEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnCollisionEnter2DEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\ActionKitMonoBehaviourEvents.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\UI\OnInitializePotentialDragEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ConsoleKit\ConsoleKit.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Utility\EaseUtility.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Debugger\DebuggerLogic\VariableInspector.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\ListPool.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\MetaTableModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\EditorKit\View\IMGUIImageButtonView.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\SingletonKit\Scripts\SingletonCreator.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDStyleConverter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PoolKit\Scripts\Pool\PoolableObject.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\RegistrationPolicies\DefaultRegistrationPolicy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\TableIteratorsModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\MemberDescriptors\DynValueMemberDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\CustomConvertersCollection.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDHandlerImages.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\GUIGraphNodeEditor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\FrameworkCLR.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\FluentAPI\1.CSharp\0.SystemObjectExtension.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Utilities\PackageHelper.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\DataStructs\Slice.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\MDMGGifs.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Expressions\IndexExpression.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\EmbeddedResourcesScriptLoader.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Tree\Statements\CompositeStatement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\FrameworkCore.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\StandardDescriptors\StandardGenericsUserDataDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Loaders\ScriptLoaderBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Compatibility\Frameworks\Base\FrameworkReflectionBase.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Repeat.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\RegistrationPolicies\PermanentRegistrationPolicy.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\ProxyObjects\DelegateProxyFactory.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\CoreLib\DebugModule.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\PackageManager\Command\InstallPackageCommand.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\EventKit\EventTrigger\Physics\OnTriggerStayEventTrigger.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Layout\MDBlockSpace.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Editor\CodeGenTask.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Interop\BasicDescriptors\ParameterDescriptor.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ActionKit\Scripts\Internal\Action\Sequence.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\CodeGenKit\Scripts\Framework\Writer\FileCodeWriter.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\_CoreKit\ScriptKit\MoonSharp\Interpreter\Serialization\ObjectValueConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\Resources\ScriptTemplates\IMGUIGraphNodeTemplate.cs.txt" />
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\Internal\Guidline\Editor\Resources\EditorGuideline\PositionMarkForLoad.txt" />
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\QFramework.CoreKit.asmdef" />
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\GraphKit\IMGUI\Scripts\Editor\Resources\ScriptTemplates\IMGUIGraphTemplate.cs.txt" />
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll" />
+    <None Include="Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DeviceSimulatorModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.DiagnosticsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.EditorToolbarModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.EditorToolbarModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.GraphViewModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.PresetsUIModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.PresetsUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.QuickSearchModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneTemplateModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SceneViewModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneViewModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreFontEngineModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.TextCoreTextEngineModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIBuilderModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UIElementsSamplesModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UnityConnectModule">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.5\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Markdig">
+      <HintPath>Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.AppContext.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Console.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Data.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.DispatchProxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.ILGeneration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.Lightweight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Transactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>G:\UnityEditor\Install\2022.3.34f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="QFramework.csproj">
+      <Project>{2EA0E429-69A6-9F76-CB0A-61DDABC300CB}</Project>
+      <Name>QFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{F39FF8DF-C67B-3BE8-5820-C319120DB2E9}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{6E5B7348-E362-A273-2462-D41EB84FA643}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+{
+"dicta":[
+  {
+    "id": "dictum.bookofhours",
+    "WorldSphereType": "SecretHistories.Spheres.SkySphere",
+    "DefaultWorldSpherePath": "~/hand",
+    "AlternativeDefaultWorldSpherePaths": {"PhysicalObject": "~/region_coast!beach/foreshore","LargePhysicalObject": "~/region_coast!beach/foreshore"  },
+    "LogoScene": "S1Logo",
+    "QuoteScene": "S2Quote",
+    "MenuScene": "S3MenuUmber",
+    "PlayfieldScene": "S4Library",
+    "GameOverScene": "S5GameOver",
+    "NewGameScene": "S6NewGame",
+    "NoteElementId": "tlg.note",	
+	"DefaultTravelDuration": "1",
+  "DefaultQuickTravelDuration": "0.25"
+  }
+
+]
+
+}

@@ -1,0 +1,87 @@
+ {"recipes": [
+ 
+
+{
+        "id": "visits.cycle",
+        "label": "Entries and exits",
+        "actionid": "visits",
+        "startdescription": "Extracelestial cycle hub for visitors.",
+		"effects":{"incident":-99},
+              "warmup": 10,
+        "craftable": false,		
+		"linked": [   {"id": "visits.cycle"}]
+},
+{
+    "id": "debug.serena",
+    "label": "Serena Debug",
+    "actionid": "debug",
+    "startdescription": ".",
+          "warmup": 1,
+    "craftable": false,		
+    "alt": [  {"id": "visits.enter.serena","topath":"~/region_coast!hill/headland_slope", "additional": "true"}]
+},
+{
+    "id": "visits.enter.serena",
+    "label": "Dr Serena",
+    "actionid": "npc.serena",
+    "startdescription": "Dr Serena Blackwood returns, again, to the library where she was Secretary Vigilant.",
+    "seeking": {"statue.founder":1},
+          "warmup": 1,
+    "craftable": false,
+    "linked":[{"id": "visits.arrived.serena"},
+        {"id": "visits.enter.serena"}]
+},
+{
+    "id": "visits.arrived.serena",
+    "label": "Dr Serena Wants a Book",
+    "actionid": "npc.serena",
+    "nearbyreqs": {"statue.founder":1},
+    "startdescription": "'Can I have a book, please?'",
+    "warmup":60,
+    "slots": [
+        {
+            "id": "book",
+            "label": "Book",
+            "required": {
+                "readable": 1
+            },
+            "description": "Reading material."
+        }
+    ],
+    "alt":[{"id": "visits.unsatisfied.serena"},
+        {"id": "visits.satisfied.serena"}
+        ]
+},
+{
+    "id": "visits.satisfied.serena",
+    "label": "Dr Serena is Grateful",
+    "actionid": "npc.serena",
+    "startdescription": "Nice!",
+    "requirements": {"readable":1},
+          "warmup": 10,
+    "linked":[{"id": "visits.leaving"}]
+},
+{
+    "id": "visits.unsatisfied.serena",
+    "label": "Dr Serena is Cross",
+    "actionid": "npc.serena",
+    "startdescription": "Phah!",
+    "requirements": {"readable":-1},
+          "warmup": 10,
+    "linked":[{"id": "visits.leaving"}]
+},
+
+{
+    "id": "visits.leaving",
+    "label": "Outgoing visitor",
+    "actionid": "v",
+    "startdescription": "Outgoing visitor.",
+    "nearbyreqs": {"way.inland":-1},
+    "seeking": {"way.inland":1},
+          "warmup": 1,
+    "craftable": false,
+    "linked":[{"id": "visits.leaving"}]
+}
+
+]
+}

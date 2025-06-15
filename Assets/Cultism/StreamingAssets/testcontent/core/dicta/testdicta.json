@@ -1,0 +1,21 @@
+{
+"dicta":[
+  {
+    "id": "dictum.cultistsimulator",
+    "DefaultWorldSpherePath": "~/tabletop",
+    "MasterScene": "S0Master",
+    "LogoScene": "S1Logo",
+    "QuoteScene": "S2Quote",
+    "MenuScene": "S3Menu",
+    "PlayfieldScene": "S4Tabletop",
+    "GameOverScene": "S5GameOver",
+    "NewGameScene": "S6NewGame",
+    "UhOScene": "S7UhO",
+	"NoteElementId": "tlg.note",
+	"DefaultTravelDuration": "3",
+  "DefaultQuickTravelDuration": "0.25"
+  }
+
+]
+
+}

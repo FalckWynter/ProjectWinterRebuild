@@ -1,0 +1,45 @@
+{
+    "elements": [
+        {
+            "id": "mem.storm",
+            "label": "Memory: Storm",
+            "description": "A storm - a storm that shook the sky?",
+            "aspects": {"memory":1}
+        },
+        {
+            "id": "mem.dreamt",
+            "label": "Memory: After Midnight",
+            "description": "Something I saw - in the deep watches of the night?",
+            "aspects": {"memory":1}
+        },        {
+            "id": "mem.whisper",
+            "label": "Memory: a Whisper",
+            "description": "Something I heard?",
+            "aspects": {"memory":1}
+        },
+        {
+            "id": "mem.clue",
+            "label": "Memory: a Clue",
+            "description": "Something I read?",
+            "aspects": {"memory":1}
+        },
+        {
+            "id": "mem.guilt",
+            "label": "Memory: Guilt",
+            "description": "Something I regret?",
+            "aspects": {"memory":1}
+        },
+        {
+            "id": "mem.fear",
+            "label": "Memory: Fear",
+            "description": "Something I fear?",
+            "aspects": {"memory":1}
+        },
+        {
+            "id": "mem.loss",
+            "label": "Memory: Loss",
+            "description": "Something I've lost?",
+            "aspects": {"memory":1}
+        }
+    ]
+}

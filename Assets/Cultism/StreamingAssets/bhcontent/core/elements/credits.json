@@ -1,0 +1,18 @@
+﻿{
+	"elements": [
+		{
+			"id": "credits.designwritingcoding",
+			"label": "Design, Writing, Coding",
+			"description": "Alexis Kennedy",
+			"icon": "rarity.moth"
+		},
+		{
+			"id": "credits.productionmarketingbiz",
+			"label": "Production, Marketing, Biz",
+			"description": "Lottie Bevan",
+			"icon": "enid_r"
+
+		}
+		]
+
+}

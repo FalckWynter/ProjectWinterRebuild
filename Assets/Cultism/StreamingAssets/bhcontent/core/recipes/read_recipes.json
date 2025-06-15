@@ -1,0 +1,16 @@
+ {"recipes": [
+ 
+
+{
+        "id": "catalogue",
+        "label": "Catalogue",
+        "actionid": "pc",
+        "startdescription": "Glean general information about an uncatalogued text.",
+		"requirements":{"uncatalogued":1,"readable":1},
+		"aspects":{"scrutiny":1},
+        "craftable": true,
+		"warmup":2
+},
+
+]
+}

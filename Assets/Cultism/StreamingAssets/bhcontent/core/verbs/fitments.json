@@ -1,0 +1,18 @@
+{
+    "verbs": [
+		{
+            "id": "desk",
+          "label": "Bureau Desk",
+          "startable": true,
+          "category": "Workstation",
+            "description": "Inks, papers, interfering cats.",
+            "slot": {
+                "id": "worksurface",
+                "label": "Work Surface",
+                "required": {
+                    "readable": 1
+                }
+            }
+        }
+    ]
+}
