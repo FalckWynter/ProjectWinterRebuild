@@ -10,7 +10,7 @@ public class UtilSystem : AbstractSystem
         cardParent = GameObject.Find("MainCanvas/CardParent");
     }
 
-    public void CreateCardGameObject(AbstractCard card)
+    public GameObject CreateCardGameObject(AbstractCard card)
     {
         AbstractCard newCard = card.GetNewCopy();
         GameObject cardPrefab = PrefabDataBase.TryGetPrefab("CardPrefab");
@@ -19,6 +19,7 @@ public class UtilSystem : AbstractSystem
         mono.LoadCardData(newCard);
         cardPrefab.transform.parent = cardParent.transform;
         mono.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        return cardPrefab;
 
     }
 

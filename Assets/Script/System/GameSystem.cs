@@ -7,6 +7,7 @@ public class GameSystem : AbstractSystem
     GameModel model;
     public void AddDragListen(ICanDragComponentMono mono)
     {
+        Debug.Log("Ω” ’µΩ∂©‘ƒ");
         if (!model.dragMonoList.Contains(mono))
         model.dragMonoList.Add(mono);
     }

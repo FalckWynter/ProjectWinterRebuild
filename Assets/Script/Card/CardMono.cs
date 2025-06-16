@@ -3,30 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 public class CardMono : MonoBehaviour, ICanBeStack
 {
+    // 抽象逻辑数据
+    public AbstractCard card;
+
+
+    //实体卡牌逻辑
     public Image artwork;
     public TextMeshProUGUI lore;
-    public AbstractCard card;
     public CardCounterMono cardCountMono;
-    private int stackCount = 1;
-    public int StackCount { set; get; }
+    public UnityEvent deleteAction = new UnityEvent();
+    public int stackCount = 1;
+    public int StackCount { get { return stackCount; } set { stackCount = value;cardCountMono.SetCount(stackCount); } }
 
-    private int maxStack = -1;
-    public int MaxStack { set; get; }
     private void Start()
     {
         cardCountMono.SetCount(stackCount);
     }
-    public bool IsCanBeStack<T>(T newStacker) where T:ICanBeStack
-    {
-        if (newStacker is not AbstractCard newCard)
-        {
-            return false;
-        }
-        return true;
-    }
-
     public void LoadCardData(AbstractCard card)
     {
         artwork.sprite = card.icon;
@@ -34,16 +29,43 @@ public class CardMono : MonoBehaviour, ICanBeStack
         this.card = card;
     }
 
-    public void TryAddStack(ICanBeStack newStacker,GameObject ob)
-    {
-        stackCount = stackCount + 1;
-        cardCountMono.SetCount(stackCount);
-        GameObject.Destroy(ob);
+    //借口实现逻辑
 
+    public bool TrySubStack(ICanBeStack newStacker)
+    {
+        stackCount--;
+        if (stackCount <= 0)
+            Destroy(gameObject);
+        return true;
     }
 
-    public void TrySubStack(ICanBeStack newStacker,GameObject ob = null)
+    public bool CanStackWith(ICanBeStack other)
     {
-        
+        Debug.Log("能否进行堆叠");
+        if(other is CardMono cardmono)
+        {
+            if (cardmono.card.IsEqualTo(this.card))
+                return true;
+        }
+        Debug.Log("不能进行堆叠");
+        return false;
+    }
+
+    public bool TryAddStack(ICanBeStack other)
+    {
+        if (other is CardMono cardmono)
+        {
+            stackCount = stackCount + 1;
+            cardCountMono.SetCount(stackCount);
+            other.DestroySelf();
+            return true;
+        }
+        return false;
+    }
+
+    public void DestroySelf()
+    {
+        deleteAction.Invoke();
+        Destroy(gameObject);
     }
 }

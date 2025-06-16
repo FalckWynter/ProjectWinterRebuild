@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 8279467949026643549}
   - component: {fileID: 3180171271660830182}
   - component: {fileID: 838849143662584817}
+  - component: {fileID: 6610359296786950088}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -512,7 +513,32 @@ MonoBehaviour:
   artwork: {fileID: 6798882414921654874}
   lore: {fileID: 2703348055879587044}
   cardCountMono: {fileID: 9019011103099069178}
+  deleteAction:
+    m_PersistentCalls:
+      m_Calls: []
+  stackCount: 1
 --- !u!114 &838849143662584817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018376193129344304}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f11ad6ac5ac9ae4795529b147ae836b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragThreshold: 30
+  componentParent: {fileID: 0}
+  isCanBeDrag: 1
+  onStartDrag:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6610359296786950088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,10 +547,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018376193129344304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f11ad6ac5ac9ae4795529b147ae836b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ca417fb0a63ff24999a960e7fc40f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dragThreshold: 30
+  componentParent: {fileID: 0}
+  isCanBeDrag: 1
+  onStartDrag:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+  mono: {fileID: 0}
 --- !u!1 &3526434214669181781
 GameObject:
   m_ObjectHideFlags: 0

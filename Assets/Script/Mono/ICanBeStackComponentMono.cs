@@ -27,9 +27,9 @@ public class ICanBeStackComponentMono : MonoBehaviour
 }
 public interface ICanBeStack
 {
-    public int StackCount { set; get; }
-    public int MaxStack { set; get; }
-    public bool IsCanBeStack<T>(T newStacker) where T:ICanBeStack;
-    public void TryAddStack(ICanBeStack newStacker,GameObject ob = null);
-    public void TrySubStack(ICanBeStack newStacker,GameObject ob = null);
+    public bool CanStackWith(ICanBeStack other);
+    public bool TryAddStack(ICanBeStack other);
+    public bool TrySubStack(ICanBeStack other);
+    public void DestroySelf();
+
 }

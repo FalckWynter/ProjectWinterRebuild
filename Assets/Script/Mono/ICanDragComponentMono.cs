@@ -13,8 +13,10 @@ public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHa
     public float dragThreshold = 30f; // 可调距离阈值
     CanvasGroup canvasGroup;
     public GameObject componentParent;
+    public bool isCanBeDrag = true;
     public UnityEvent<ICanDragComponentMono> onStartDrag = new UnityEvent<ICanDragComponentMono>();
-    private void Start()
+    public UnityEvent<ICanDragComponentMono> onEndDrag = new UnityEvent<ICanDragComponentMono>();
+    public virtual void Start()
     {
         system = this.GetSystem<GameSystem>();
         canvasGroup = this.GetComponent<CanvasGroup>();
@@ -33,6 +35,7 @@ public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHa
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (isCanBeDrag == false) return;
         if (!isDragging)
         {
             float dist = Vector2.Distance(eventData.position, startPointerPos);
@@ -59,6 +62,9 @@ public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (isCanBeDrag == false) return;
+        Debug.Log("结束拖拽");
+        onEndDrag.Invoke(this);
         if (isDragging)
         {
             system.RemoveDragListen(this);
@@ -67,8 +73,10 @@ public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHa
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public virtual void OnBeginDrag(PointerEventData eventData)
     {
+        if (isCanBeDrag == false) return;
+        Debug.Log("开始拖拽");
         onStartDrag.Invoke(this);
     }
 }
