@@ -413,8 +413,10 @@ GameObject:
   - component: {fileID: 8516020610332065303}
   - component: {fileID: 8279467949026643549}
   - component: {fileID: 3180171271660830182}
-  - component: {fileID: 838849143662584817}
   - component: {fileID: 6610359296786950088}
+  - component: {fileID: 2709846086146552850}
+  - component: {fileID: 3040431917193138175}
+  - component: {fileID: 346828037286695722}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -516,28 +518,9 @@ MonoBehaviour:
   deleteAction:
     m_PersistentCalls:
       m_Calls: []
+  audiomono: {fileID: 3040431917193138175}
+  getDragAudioMono: {fileID: 346828037286695722}
   stackCount: 1
---- !u!114 &838849143662584817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018376193129344304}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f11ad6ac5ac9ae4795529b147ae836b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragThreshold: 30
-  componentParent: {fileID: 0}
-  isCanBeDrag: 1
-  onStartDrag:
-    m_PersistentCalls:
-      m_Calls: []
-  onEndDrag:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6610359296786950088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca417fb0a63ff24999a960e7fc40f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragThreshold: 30
+  dragThreshold: 0
   componentParent: {fileID: 0}
   isCanBeDrag: 1
   onStartDrag:
@@ -559,7 +542,50 @@ MonoBehaviour:
   onEndDrag:
     m_PersistentCalls:
       m_Calls: []
-  mono: {fileID: 0}
+  mono: {fileID: 3180171271660830182}
+  audiomono: {fileID: 0}
+  glowFader: {fileID: 8372619771143774659}
+  textIndex: 1
+--- !u!114 &2709846086146552850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018376193129344304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531caa41abfead447ace9ac5eefac0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardmono: {fileID: 0}
+--- !u!114 &3040431917193138175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018376193129344304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6eedb2dd28f1458d1ff0c2a215111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDragAudioKey: card_pickup
+  endDragAudioKey: 
+--- !u!114 &346828037286695722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018376193129344304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a364dbcbf5d9248a69fd67223780d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getDragAudioKey: card_table_leave
 --- !u!1 &3526434214669181781
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +731,7 @@ GameObject:
   - component: {fileID: 5729873463622146532}
   - component: {fileID: 3836202684031728384}
   - component: {fileID: 8628854986300822350}
+  - component: {fileID: 8372619771143774659}
   m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
@@ -769,6 +796,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8372619771143774659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689065873980019257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62116e08ab224c4b9529640a1473ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreTimeScale: 1
+  durationTurnOn: 0.2
+  durationTurnOff: 0.1
+  currentColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3709475678890602793
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
-public class TestCardMono : MonoBehaviour,IController
+namespace PlentyFishFramework
 {
-    public string cardID = "";
-    public IArchitecture GetArchitecture()
+    public class TestCardMono : MonoBehaviour, IController
     {
-        return ProjectWinterArchitecture.Interface;
-    }
-    public void CreateCard()
-    {
-        this.GetSystem<UtilSystem>().CreateCardGameObject(CardDataBase.TryGetCard(cardID));
-    }
+        public string cardID = "";
+        public IArchitecture GetArchitecture()
+        {
+            return ProjectWinterArchitecture.Interface;
+        }
+        public void CreateCard()
+        {
+            this.GetSystem<UtilSystem>().CreateCardGameObject(CardDataBase.TryGetCard(cardID));
+        }
 
+    }
 }

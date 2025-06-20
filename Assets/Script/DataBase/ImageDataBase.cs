@@ -16,8 +16,10 @@ public class ImageDataBase
     }
     public static Sprite TryGetVerbImage(string key)
     {
+        Debug.Log("载入名称" + key);
         if (!verbDataBase.ContainsKey(key))
             return verbDataBase["DefaultImage"];
+        Debug.Log("返还名称" + verbDataBase[key].name);
         return verbDataBase[key];
     }
     static ImageDataBase()
@@ -37,10 +39,10 @@ public class ImageDataBase
             aspectDataBase.Add(v.name, v);
         }
         obs = Resources.LoadAll<Sprite>("Images/Verb");
-        //Debug.Log("载入性相图片资源"+ obs.Length);
+        Debug.Log("载入性相图片资源" + obs.Length);
         foreach (var v in obs)
         {
-            //Debug.Log("当前载入性相资源" + v.name);
+            Debug.Log("当前载入性相资源" + v.name);
             verbDataBase.Add(v.name, v);
         }
         obs = Resources.LoadAll<Sprite>("Images/Legacy");

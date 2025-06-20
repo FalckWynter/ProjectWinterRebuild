@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
+using PlentyFishFramework;
+
 public class GameCore : MonoBehaviour,IController
 {
     UtilSystem utilSystem;
