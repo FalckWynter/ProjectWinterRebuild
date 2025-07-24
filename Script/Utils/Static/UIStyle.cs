@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class UIStyle {
+    // 密教模拟器移植 取色样本
     public enum GlowPurpose { Default, OnHover, Hint}
     public enum GlowTheme {Classic,Mansus}
     

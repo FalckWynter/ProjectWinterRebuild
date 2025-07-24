@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Graphic))]
 public class GraphicFader : MonoBehaviour {
 
+    // 移植的密教模拟器脚本 处理光环效果
     public bool ignoreTimeScale = true;
     public float durationTurnOn = 0.2f;
     public float durationTurnOff = 0.1f;

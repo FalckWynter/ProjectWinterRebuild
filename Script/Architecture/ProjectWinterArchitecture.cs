@@ -9,6 +9,7 @@ namespace PlentyFishFramework
     {
         public static ProjectWinterArchitecture architecture;
         GameSystem gameSystem;
+        RecipeSystem recipeSystem;
         //public UIStateSystem uiSystem;
         //public LevelSystem levelSystem;
         public ProjectWinterArchitecture()
@@ -18,14 +19,21 @@ namespace PlentyFishFramework
         }
         protected override void Init()
         {
+            // 注册系统和数据模型
             Debug.Log("初始化");
             architecture = this;
+            this.RegisterModel<GameModel>(new GameModel());
+            this.RegisterModel<RecipeModel>(new RecipeModel());
             this.RegisterSystem<UtilSystem>(new UtilSystem());
             this.RegisterSystem<GameSystem>(new GameSystem());
-            this.RegisterModel<GameModel>(new GameModel());
+            this.RegisterSystem<RecipeSystem>(new RecipeSystem());
+
+            recipeSystem = this.GetSystem<RecipeSystem>();
             gameSystem = this.GetSystem<GameSystem>();
 
             gameSystem.LateInit();
+
+            gameSystem.InitTable();
             //this.RegisterModel<CachePoolModel>(new CachePoolModel());
             //this.RegisterModel<LevelModel>(new LevelModel());
             //this.RegisterModel<UIStateModel>(new UIStateModel());
@@ -42,12 +50,20 @@ namespace PlentyFishFramework
             //levelModel = this.GetModel<LevelModel>();
         }
         //LevelModel levelModel;
+        public void PreUpdate()
+        {
+            recipeSystem.PreUpdate();
+        }
         public void Update()
         {
             //uiSystem.Update();
             //levelSystem.Update();
             // levelModel.currentRecipe.CheckRecipe();
             //Debug.Log("更新结构");
+        }
+        public void LateUpdate()
+        {
+            gameSystem.LateUpdate();
         }
     }
 }

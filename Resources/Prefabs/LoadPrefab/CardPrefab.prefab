@@ -413,10 +413,9 @@ GameObject:
   - component: {fileID: 8516020610332065303}
   - component: {fileID: 8279467949026643549}
   - component: {fileID: 3180171271660830182}
-  - component: {fileID: 6610359296786950088}
-  - component: {fileID: 2709846086146552850}
-  - component: {fileID: 3040431917193138175}
-  - component: {fileID: 346828037286695722}
+  - component: {fileID: 7669839293632548004}
+  - component: {fileID: 1351396379093935468}
+  - component: {fileID: 5010811444527624267}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -513,15 +512,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artwork: {fileID: 6798882414921654874}
-  lore: {fileID: 2703348055879587044}
+  label: {fileID: 2703348055879587044}
   cardCountMono: {fileID: 9019011103099069178}
-  deleteAction:
-    m_PersistentCalls:
-      m_Calls: []
-  audiomono: {fileID: 3040431917193138175}
-  getDragAudioMono: {fileID: 346828037286695722}
   stackCount: 1
---- !u!114 &6610359296786950088
+--- !u!114 &7669839293632548004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,11 +524,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018376193129344304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca417fb0a63ff24999a960e7fc40f68, type: 3}
+  m_Script: {fileID: 11500000, guid: df4241192aa3a81438936bec7baf3571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
+  startPointerPos: {x: 0, y: 0}
+  isKeepOffset: 0
   dragThreshold: 0
-  componentParent: {fileID: 0}
   isCanBeDrag: 1
   onStartDrag:
     m_PersistentCalls:
@@ -542,11 +538,17 @@ MonoBehaviour:
   onEndDrag:
     m_PersistentCalls:
       m_Calls: []
-  mono: {fileID: 3180171271660830182}
-  audiomono: {fileID: 0}
-  glowFader: {fileID: 8372619771143774659}
+  onDragFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
   textIndex: 1
---- !u!114 &2709846086146552850
+  mono: {fileID: 0}
+  glowFader: {fileID: 0}
+  dragAudioMono: {fileID: 0}
+--- !u!114 &1351396379093935468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -555,11 +557,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018376193129344304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 531caa41abfead447ace9ac5eefac0a5, type: 3}
+  m_Script: {fileID: 11500000, guid: d0466d8fc1520db4685fad54e939f65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardmono: {fileID: 0}
---- !u!114 &3040431917193138175
+  containedObjects: []
+  cardMono: {fileID: 0}
+  dragMono: {fileID: 0}
+  dragAudioMono: {fileID: 0}
+--- !u!114 &5010811444527624267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -568,24 +573,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018376193129344304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e6eedb2dd28f1458d1ff0c2a215111, type: 3}
+  m_Script: {fileID: 11500000, guid: 7297e8aab59c0674287f83c78e9d7150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startDragAudioKey: card_pickup
   endDragAudioKey: 
---- !u!114 &346828037286695722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018376193129344304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a364dbcbf5d9248a69fd67223780d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getDragAudioKey: card_table_leave
+  getStackAudioKey: card_table_leave
+  getClickAudioKey: 
+  gameobjectDisableAudioKey: 
 --- !u!1 &3526434214669181781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1479,7 @@ GameObject:
   - component: {fileID: 3940848914867152346}
   - component: {fileID: 1674672551549091414}
   - component: {fileID: 2703348055879587044}
+  - component: {fileID: 3039920579931679497}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1608,3 +1604,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3039920579931679497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106617504520863726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  textUI: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioDataBase 
 {
+    // “Ù–ß¥ µ‰
     public static Dictionary<string, AudioClip> soundDataBase = new Dictionary<string, AudioClip>();
 
     public static AudioClip TryGetAudio(string key)

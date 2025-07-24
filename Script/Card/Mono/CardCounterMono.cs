@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class CardCounterMono : MonoBehaviour
+namespace PlentyFishFramework
 {
-    public GameObject parent;
-    public TextMeshProUGUI countText;
-    private void Start()
+    public class CardCounterMono : MonoBehaviour
     {
-        parent = gameObject;
-        countText = transform.Find("StackCount").GetComponent<TextMeshProUGUI>();
-    }
-    public void SetCount(int value)
-    {
-        countText.text = value.ToString();
-        if (value > 1)
+        // 卡牌计数器脚本 根据传入的值决定是否显示计数小图标
+        public GameObject parent;
+        public TextMeshProUGUI countText;
+        private void Start()
         {
-            parent.SetActive(true);
+            parent = gameObject;
+            countText = transform.Find("StackCount").GetComponent<TextMeshProUGUI>();
         }
-        else
+        public void SetCount(int value)
         {
-            parent.SetActive(false);
+            countText.text = value.ToString();
+            if (parent == null) return;
+            if (value > 1)
+            {
+                parent.SetActive(true);
+            }
+            else
+            {
+                parent.SetActive(false);
+            }
         }
     }
 }

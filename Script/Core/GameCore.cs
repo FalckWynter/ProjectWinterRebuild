@@ -1,27 +1,53 @@
+using PlentyFishFramework;
+using QFramework;
+using QFramework.PointGame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using QFramework;
-using PlentyFishFramework;
 
-public class GameCore : MonoBehaviour,IController
+namespace PlentyFishFramework
 {
-    UtilSystem utilSystem;
-    public IArchitecture GetArchitecture()
+    public class GameCore : MonoBehaviour, IController
     {
-        return ProjectWinterArchitecture.Interface;
-    }
+        // 游戏核心脚本
+        UtilSystem utilSystem;
+        GameModel gameModel;
+        ProjectWinterArchitecture architecture;
+        public IArchitecture GetArchitecture()
+        {
+            return ProjectWinterArchitecture.Interface;
+        }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        utilSystem = this.GetSystem<UtilSystem>();
-        utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            architecture = (ProjectWinterArchitecture)this.GetArchitecture();
+            utilSystem = this.GetSystem<UtilSystem>();
+            utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
+            gameModel = this.GetModel<PlentyFishFramework.GameModel>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        // Update is called once per frame
+        // 更新框架内容
+        void Update()
+        {
+            architecture.PreUpdate();
+        }
+        public void LateUpdate()
+        {
+            architecture.LateUpdate();
+            //if (gameModel.dragMonoList.Count > 0)
+            //{
+            //    StartCoroutine(ClearDragListsAtFrameEnd());
+            //}
+
+        }
+        private IEnumerator ClearDragListsAtFrameEnd()
+        {
+            yield return new WaitForEndOfFrame();
+
+            gameModel.dragMonoList.Clear(); // 清空待清空列表的记录
+        }
     }
 }

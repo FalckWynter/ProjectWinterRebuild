@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 public class TextLoadMono : MonoBehaviour
 {
+    // 载入字体脚本
     public TextMeshPro text;
     public TextMeshProUGUI textUI;
     // 这个脚本挂在有TextMeshPro的物体上，用于快速替换字体资源和语言

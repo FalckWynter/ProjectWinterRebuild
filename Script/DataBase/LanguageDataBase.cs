@@ -5,12 +5,14 @@ using TMPro;
 
 public class LanguageDataBase 
 {
+    // 语言数据库
     private static TMP_FontAsset chineseFont;
     // 参与了订阅的TextMeshPro
     public static List<TextLoadMono> textList = new List<TextLoadMono>();
     // 当前的字体 根据当前语言取得
     public static TMP_FontAsset currentFont { get { return fontDataBase[currentLanguage]; } }
     public static FontLanguage currentLanguage = FontLanguage.Chinese;
+    public static string TimeUnitText = "秒";
     static LanguageDataBase()
     {
         chineseFont = Resources.Load<TMPro.TMP_FontAsset>("Font/Chinese7000");
