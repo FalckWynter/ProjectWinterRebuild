@@ -13,6 +13,11 @@ namespace PlentyFishFramework
         private static float gameLogicSpeed = 1f;
         // 游戏逻辑时间经过计算倍率缩放后的deltaTime
         public static float GameLogicDeltaTime => gameLogicSpeed * Time.deltaTime;
+
+        public static TokenDetailsWindowMono tokenDetailWindow;
+        public static AspectDetailWindowMono aspectDetailWindow;
+        public static SlotDetailsWindowMono slotDetailWindow;
+        
         protected override void OnInit()
         {
 

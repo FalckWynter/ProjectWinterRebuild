@@ -5,9 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 using QFramework;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 namespace PlentyFishFramework
 {
-    public class CardMono : MonoBehaviour, IController, ITableElement
+    public class CardMono : MonoBehaviour, IController, ITableElement, IPointerClickHandler
     {
         // 卡牌脚本组件
 
@@ -31,24 +33,30 @@ namespace PlentyFishFramework
         public Image artwork;
         public TextMeshProUGUI label;
         public CardCounterMono cardCountMono;
+        public GameObject decayViewObject;
+        public TextMeshProUGUI decayCount;
 
         // 因为卡牌堆叠是和自己的Mono显示有关系的，所以脚本写在这里 后期可能考虑移走
         public int stackCount = 1;
         public int StackCount { get { return stackCount; } set { stackCount = value; cardCountMono.SetCount(stackCount); } }
 
-
+        public CardICanDragComponentMono cardICanDragComponentMono;
 
         private void Start()
         {
             cardCountMono.SetCount(stackCount);
             gameSystem = this.GetSystem<GameSystem>();
             CacheOriginalRectTransform();
+            cardICanDragComponentMono = GetComponent<CardICanDragComponentMono>();
+
         }
+
         public void LoadCardData(AbstractCard card)
         {
             artwork.sprite = card.icon;
             label.text = card.label + card.createIndex;
             this.card = card;
+            UpdateCardDecayView();
         }
 
         //借口实现逻辑
@@ -99,13 +107,26 @@ namespace PlentyFishFramework
         public void UnRegisterFromSlotMono()
         {
             if (BelongtoSlotMono != null)
-                BelongtoSlotMono.slot.stackItemList.Remove(this);
+            {
+                gameSystem.UnRegisterStackElementFromSlot(this, this.BelongtoSlotMono);
+                //BelongtoSlotMono.slot.stackItemList.Remove(this);
+            }
             if (BeforeSlotMono != null)
                 BeforeSlotMono.slot.stackItemList.Remove(this);
         }
 
         private void OnDestroy()
         {
+            //card.isDisposed = true;
+
+            this.GetModel<GameModel>().RemoveCardMonoFromLevelList(this);
+            this.GetModel<GameModel>().RemoveCardMonoFromTableList(this);
+            if (BelongtoSlotMono != null)
+            {
+                // 3.2.1.2 销毁时解除对原有卡槽的占用
+                gameSystem.UnRegisterStackElementFromSlot(this, BelongtoSlotMono);
+
+            }
             //Debug.Log("发起销毁");
         }
 
@@ -150,6 +171,59 @@ namespace PlentyFishFramework
             rect.anchorMax = originalAnchorMax;
             rect.pivot = originalPivot;
             rect.localScale = originalScale;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Debug.Log("点击");
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                //UtilModel.tokenDetailWindow.ShowWindowForCard(card);
+                UtilSystem.ShowCard(card);
+            }
+        }
+        public void UpdateCardDecayView()
+        {
+            if (card == null || card.isCanDecayByTime == false)
+            {
+                //Debug.Log("没有卡牌" );
+
+                HideCardDecayView();
+            }
+            else
+            {
+                //Debug.Log("更新剩余时间" + card.lifeTime);
+                ShowCardDecayView();
+            }
+
+        }
+        public void ShowCardDecayView()
+        {
+            decayViewObject.SetActive(true);
+            decayCount.text = card.lifeTime.ToString("F1");
+        }
+        public void HideCardDecayView()
+        {
+            decayViewObject.SetActive(false);
+        }
+        public void Update()
+        {
+            UpdateCardDecayView();
+            //if (mono.BelongtoSlotMono != null)
+            //    inspectorOb = mono.BelongtoSlotMono.gameObject;
+            //else
+            //    inspectorOb = null;
+          //  Debug.Log("BelongtoSlotMono: " + (mono.BelongtoSlotMono != null) +
+          //", Slot: " + (mono.BelongtoSlotMono != null ? (mono.BelongtoSlotMono.slot != null).ToString() : "null") +
+          //", isGreedy: " + (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null ? mono.BelongtoSlotMono.slot.isGreedy.ToString() : "null") +
+          //", isCanBeDrag: " + cardICanDragComponentMono.isCanBeDrag);
+
+            //if (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null && mono.BelongtoSlotMono.slot.isGreedy && cardICanDragComponentMono.isCanBeDrag)
+            //{
+            //    Debug.Log("关闭拖拽");
+            //    cardICanDragComponentMono.isCanBeDrag = false;
+            //    return;
+            //}
         }
     }
 }

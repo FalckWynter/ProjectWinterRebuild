@@ -17,7 +17,12 @@ public interface ICanBeEqualCompare<T>
     abstract bool IsEqualTo(T other);
 }
 
-
+public class AbstractElement
+{
+    public string stringIndex;
+    public int index;
+    public string label, lore, comment;
+}
 public class CardFilterRule
 {
     public string type;       // 规则类型，如 "HasAspect", "LabelContains"
@@ -39,6 +44,8 @@ public class RecipeTriggerNode
     public bool isCheckTargetRecipeAspectRequire = true; // 是否还需要满足目标性相的要求
 
     public Dictionary<string, int> requipeAspects; // 性相需求
+
+    public bool isNodeEndCalculateTrigger = true; // 是否结束连锁计算，为false时不结束计算
 }
 
 // 连锁器 RecipeChainTrigger
@@ -48,6 +55,65 @@ public class RecipeChainTrigger
     public List<RecipeTriggerNode> triggerNodes = new List<RecipeTriggerNode>();
 
     // 结算函数，返回触发的节点（如无触发返回 null）
+    public RecipeTriggerNode ResolveFirstTrigger(AbstractVerb verb, bool isRequipreAdditional = false)
+    {
+        // 统计总的性相池
+        Dictionary<string, int> totalAspects = verb.aspectDictionary;
+        //Debug.Log("解析verb" + triggerNodes.Count + "需求" + (isRequipreAdditional));
+        foreach (var node in triggerNodes)
+        {
+            Debug.Log("调查节点"  );
+
+            if (node.isAdditional != isRequipreAdditional)
+                continue;
+            //Debug.Log("检查要求" + (SatisfyRequirements(node.requipeAspects, totalAspects)));
+            if (SatisfyRequirements(node.requipeAspects, totalAspects))
+            {
+                if (!node.isCheckTargetRecipeAspectRequire || SatisfyRequirements(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup, node.targetRecipe).requireElementDictionary, totalAspects))
+                {
+                    //Debug.Log("通过计算" + (SatisfyRequirements(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup, node.targetRecipe).requireElementDictionary, totalAspects)));
+
+                    float roll = UnityEngine.Random.Range(0f, 100f);
+                    if (roll <= node.chance)
+                    {
+                        return node; // 命中，结束连锁器
+                    }
+                }
+            }
+        }
+        return null; // 没有任何触发
+    }
+    public List<RecipeTriggerNode> ResolveAllTrigger(AbstractVerb verb, bool isRequipreAdditional = false)
+    {
+        // 统计总的性相池
+        Dictionary<string, int> totalAspects = verb.aspectDictionary;
+        List<RecipeTriggerNode> resultList = new List<RecipeTriggerNode>();
+        //Debug.Log("解析verb" + triggerNodes.Count + "需求" + (isRequipreAdditional));
+        foreach (var node in triggerNodes)
+        {
+            Debug.Log("调查节点");
+
+            if (node.isAdditional != isRequipreAdditional)
+                continue;
+            //Debug.Log("检查要求" + (SatisfyRequirements(node.requipeAspects, totalAspects)));
+            if (SatisfyRequirements(node.requipeAspects, totalAspects))
+            {
+                if (!node.isCheckTargetRecipeAspectRequire || SatisfyRequirements(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup, node.targetRecipe).requireElementDictionary, totalAspects))
+                {
+                    //Debug.Log("通过计算" + (SatisfyRequirements(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup, node.targetRecipe).requireElementDictionary, totalAspects)));
+
+                    float roll = UnityEngine.Random.Range(0f, 100f);
+                    if (roll <= node.chance)
+                    {
+                        resultList.Add(node); // 命中，结束连锁器
+                        if (node.isNodeEndCalculateTrigger)
+                            return resultList;
+                    }
+                }
+            }
+        }
+        return resultList; // 没有任何触发
+    }
     public RecipeTriggerNode ResolveTrigger(AbstractVerb verb)
     {
         // 统计总的性相池
@@ -149,7 +215,12 @@ public class CardFilter
     }
 }
 
-
+public class CardXTrigger
+{
+    public string requireAspect = "";
+    public int requireCount = 1;
+    public string triggerToCardStringid;
+}
 public class CardEffectAction
 {
     public string type;    // 行为类型，如 "AddAspect", "ChangeLabel"
@@ -222,12 +293,12 @@ public class CardEffect
 
 
             case "RemoveCard":
-                Debug.Log("尝试移除卡牌" + action.key + "数量" + action.value);
+                //Debug.Log("尝试移除卡牌" + action.key + "数量" + action.value);
                 int toRemove = Math.Max(1, action.value);
                 int removed = 0;
                 for (int i = allCards.Count - 1; i >= 0 && removed < toRemove; i--)
                 {
-                    Debug.Log("卡牌索引" + allCards[i].stringIndex + "目标" + action.key);
+                    //Debug.Log("卡牌索引" + allCards[i].stringIndex + "目标" + action.key);
                     //if (allCards[i].stringIndex == action.key)
                     //{
                     // 此处移除的卡牌应该是已经满足筛选条件的，直接移除即可，因为需要考虑到筛选器的问题
@@ -265,4 +336,5 @@ public class CardEffect
                 // 你可以继续扩展更多修改类型
         }
     }
+
 }

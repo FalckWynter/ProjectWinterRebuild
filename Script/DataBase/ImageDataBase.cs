@@ -18,7 +18,7 @@ public class ImageDataBase
     }
     public static Sprite TryGetVerbImage(string key)
     {
-        //Debug.Log("载入名称" + key);
+        // Debug.Log("载入名称" + key);
         if (!verbDataBase.ContainsKey(key))
             return verbDataBase["DefaultImage"];
        // Debug.Log("返还名称" + verbDataBase[key].name);

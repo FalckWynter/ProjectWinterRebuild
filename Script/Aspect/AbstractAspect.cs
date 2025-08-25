@@ -7,6 +7,7 @@ namespace PlentyFishFramework
     public class AbstractAspect : AbstractElement, ICopyAble<AbstractAspect>
     {
         public bool isVisible = true;
+        public List<CardXTrigger> cardXtriggersList = new List<CardXTrigger>();
 
         public AbstractAspect GetNewCopy(AbstractAspect element)
         {

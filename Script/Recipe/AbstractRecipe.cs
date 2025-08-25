@@ -70,6 +70,13 @@ namespace PlentyFishFramework
         public RecipeChainTrigger recipeLinker;
         // 事件带有的性相
         public Dictionary<string, int> recipeAspectDictionary = new Dictionary<string, int>();
+
+        //3.3.1.1 事件要抽取的卡组
+        public Dictionary<string, int> deckeffects = new Dictionary<string, int>();
+        // 事件自带的卡组
+        public List<AbstractDeck> recipeDecks = new List<AbstractDeck>();
+        // 3.4.1 事件通向的结局
+        public string ending;
         public RecipeExcutingState recipeExcutingState
         {
             get
@@ -114,6 +121,11 @@ namespace PlentyFishFramework
             // 这个变量传引用，因为只需要方法不需要改值
             retRecipe.recipeLinker = recipe.recipeLinker;
             retRecipe.recipeAspectDictionary = new Dictionary<string, int>(recipe.recipeAspectDictionary);
+            retRecipe.deckeffects = new Dictionary<string, int>(this.deckeffects);
+            retRecipe.recipeDecks = new List<AbstractDeck>();
+            foreach (var item in this.recipeDecks)
+                retRecipe.recipeDecks.Add(item.GetNewCopy());
+            retRecipe.ending = recipe.ending;
             return retRecipe;
         }
 

@@ -40,6 +40,20 @@ namespace PlentyFishFramework
         // 2.3节增加
         // 是否为事件中的卡槽，影响其分发
         public bool isRecipeSlot = false;
+
+        // 3.1.1.4 卡槽性相要求 增加
+        // 卡槽中卡牌需要满足至少一种的性相 or
+        public Dictionary<string, int> requipredAspectsDictionary = new Dictionary<string, int>();
+        // 卡槽中卡牌不能多于的所有性相 and
+        public Dictionary<string, int> forbiddenAspectsDictionary = new Dictionary<string, int>();
+        // 卡槽中卡牌必须满足的所有性相 and
+        public Dictionary<string, int> essentialAspectsDictionary = new Dictionary<string, int>();
+
+        // 3.2.1.1 磁吸与耗尽卡槽 增加
+        // 卡槽是否尝试自动吸取卡牌
+        public bool isGreedy = false;
+        // 卡槽是否会消耗其中的卡牌
+        public bool isConsumes = false;
         public AbstractSlot GetNewCopy()
         {
             return GetNewCopy(this);
@@ -59,6 +73,11 @@ namespace PlentyFishFramework
             retSlot.isAllowStack = slot.isAllowStack;
             retSlot.slotPossibleShowVerbList = new List<string>(slot.slotPossibleShowVerbList);
             retSlot.isRecipeSlot = slot.isRecipeSlot;
+            retSlot.requipredAspectsDictionary = slot.requipredAspectsDictionary;
+            retSlot.forbiddenAspectsDictionary = slot.forbiddenAspectsDictionary;
+            retSlot.essentialAspectsDictionary = slot.essentialAspectsDictionary;
+            retSlot.isGreedy = slot.isGreedy;
+            retSlot.isConsumes = slot.isConsumes;
             return retSlot;
         }
     }

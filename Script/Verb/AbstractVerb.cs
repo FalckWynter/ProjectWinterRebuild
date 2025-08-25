@@ -47,7 +47,7 @@ namespace PlentyFishFramework
         // 2.2节增加，用于在verb更新时刷新mono订阅
         public UnityEvent<AbstractVerb, VerbExchangeReason> OnVerbDataChanged = new UnityEvent<AbstractVerb, VerbExchangeReason>();
         // ennum类型
-        public enum VerbExchangeReason { PossibleRecipeExchange,RecipeFinished,RecipeStarted,All }
+        public enum VerbExchangeReason { PossibleRecipeExchange,RecipeFinished,RecipeStarted,All,AddRecipeText }
         // 2.3节增
         // 行动框开始后管理具有的卡牌
         public List<AbstractCard> verbCardList = new List<AbstractCard>();
@@ -61,6 +61,7 @@ namespace PlentyFishFramework
         // 向词典修改要素数量，并自动移除无关要素
         public void AddAspect(string key,int value)
         {
+            //Debug.Log("修改" + key + "值" + value);
             if (aspectDictionary.ContainsKey(key))
                 aspectDictionary[key] += value;
             else

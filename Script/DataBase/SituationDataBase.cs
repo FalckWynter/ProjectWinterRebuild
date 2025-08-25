@@ -44,6 +44,28 @@ namespace PlentyFishFramework
             basicRecipeGroupKey = "DefaultGroup",
             basicRecipeKey = "ErrorSituationKey",
         }},
+         {"LifeCoreSituation",new AbstractSituation(){
+            index = 3,
+            stringIndex = "LifeCoreSituation",
+            label = "维生反应堆事件容器" ,
+            lore = "维生反应堆行动框所具有的事件容器",
+            //icon = ImageDataBase.TryGetImage("DefaultSituation"),
+            iconName = "orangetime",
+            basicRecipeGroupKey = "LifeCoreGroup",
+            basicRecipeKey = "LifeCoreBasicRecipe",
+        }},
+         {"SpaceShipSituation",new AbstractSituation(){
+            index = 4,
+            stringIndex = "SpaceShipSituation",
+            label = "飞船事件容器" ,
+            lore = "飞船行动框所具有的事件容器",
+            //icon = ImageDataBase.TryGetImage("DefaultSituation"),
+            iconName = "work",
+            basicRecipeGroupKey = "SpaceShipGroup",
+            basicRecipeKey = "SpaceShipBasicRecipe",
+            possibleRecipeGroupKeyList = new List<string>(){ "SpaceShipGroup" }
+
+        }},
     };
     }
 }

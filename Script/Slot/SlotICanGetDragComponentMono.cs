@@ -24,14 +24,18 @@ namespace PlentyFishFramework
         {
             if (model == null || model.dragMonoList == null)
                 return;
-            // Debug.Log("物体名称" + eventData.pointerDrag.gameObject.name);
+            //Debug.Log("物体名称" + eventData.pointerDrag.gameObject.name);
             bool result = false;
             // 对卡牌和行动框根据自身性质进行分装
-            if(eventData.pointerDrag.GetComponent<CardMono>() != null)
-                result = this.GetSystem<GameSystem>().MonoStackCardToSlot(eventData.pointerDrag.GetComponent<CardMono>(), slotMono,TableElementMonoType.Slot);
-            if (eventData.pointerDrag.GetComponent<VerbMono>() != null)
-                result = this.GetSystem<GameSystem>().MonoStackCardToSlot(eventData.pointerDrag.GetComponent<VerbMono>(), slotMono, TableElementMonoType.Slot);
-
+            // 卡牌接收拖拽时会检查拖拽列表，对每一个卡牌都进行检查
+            for (int i = model.dragMonoList.Count - 1; i >= 0; i--)
+            {
+                ICanDragComponentMono item = model.dragMonoList[i];
+                if (item.GetComponent<CardMono>() != null)
+                    result = this.GetSystem<GameSystem>().MonoStackCardToSlot(item.GetComponent<CardMono>(), slotMono, TableElementMonoType.Slot);
+                if (item.GetComponent<VerbMono>() != null)
+                    result = this.GetSystem<GameSystem>().MonoStackCardToSlot(item.GetComponent<VerbMono>(), slotMono, TableElementMonoType.Slot);
+            }
             //// 跳过判定 考虑把判定移动到函数里
             //if (slotMono.slot.isSlot)
             //        result = this.GetSystem<GameSystem>().MonoStackCardToSlot(eventData.pointerDrag.GetComponent<VerbMono>(), eventData.pointerDrag.GetComponent<VerbMono>().LastGridMono, TableElementMonoType.Slot);

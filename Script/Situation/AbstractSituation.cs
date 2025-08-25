@@ -30,9 +30,11 @@ namespace PlentyFishFramework
         public List<string> possibleRecipeGroupKeyList = new List<string>();
         public AbstractRecipe basicRecipe = null;
         public AbstractRecipe currentRecipe = null;
-        // 这是一个纯监视用变量 实用时需要创建复制
+        // 这是一个纯监视用变量 使用时需要创建复制
         public AbstractRecipe possibleRecipe = null;
         public List<RecipeTextElement> recipeTextList = new List<RecipeTextElement>();
+        // 等待执行的连锁事件，防止同时触发了很多个连锁事件但是吞掉了的情况
+        public List<AbstractRecipe> linkRecipeList = new List<AbstractRecipe>();
 
         public AbstractSituation GetNewCopy(AbstractSituation element)
         {
@@ -53,6 +55,8 @@ namespace PlentyFishFramework
             retSituation.possibleRecipeGroupKeyList = new List<string>();
             foreach (string item in possibleRecipeGroupKeyList)
                 retSituation.possibleRecipeGroupKeyList.Add(item);
+            if (retSituation.possibleRecipeGroupKeyList.Count == 0)
+                retSituation.possibleRecipeGroupKeyList.Add(basicRecipeGroupKey);
             retSituation.recipeTextList = new List<RecipeTextElement>(element.recipeTextList);
             retSituation.basicRecipe = RecipeDataBase.TryGetRecipe(retSituation.basicRecipeKey, retSituation.basicRecipeGroupKey).GetNewCopy();
             retSituation.possibleRecipe = retSituation.basicRecipe;

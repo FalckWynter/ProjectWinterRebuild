@@ -10,6 +10,7 @@ namespace PlentyFishFramework
         public static ProjectWinterArchitecture architecture;
         GameSystem gameSystem;
         RecipeSystem recipeSystem;
+        GameModel gameModel;
         //public UIStateSystem uiSystem;
         //public LevelSystem levelSystem;
         public ProjectWinterArchitecture()
@@ -30,8 +31,9 @@ namespace PlentyFishFramework
 
             recipeSystem = this.GetSystem<RecipeSystem>();
             gameSystem = this.GetSystem<GameSystem>();
-
+            gameModel = this.GetModel<GameModel>();
             gameSystem.LateInit();
+            recipeSystem.LateInit();
 
             gameSystem.InitTable();
             //this.RegisterModel<CachePoolModel>(new CachePoolModel());
@@ -56,6 +58,7 @@ namespace PlentyFishFramework
         }
         public void Update()
         {
+            gameSystem.Update();
             //uiSystem.Update();
             //levelSystem.Update();
             // levelModel.currentRecipe.CheckRecipe();

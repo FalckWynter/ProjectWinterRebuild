@@ -101,6 +101,7 @@ namespace PlentyFishFramework
                     }
                 }},
                 {"TestRecipeLv2",new AbstractRecipe(){
+                    // 标准的2卡牌事件
                     index = 5,
                     stringIndex = "TestRecipeLv2",
                     label = "强化测试事件" ,
@@ -117,6 +118,22 @@ namespace PlentyFishFramework
                     recipeSlots = new List<AbstractSlot>()
                     {
                         SlotDataBase.TryGetRecipeSlot("RecipeBringSlot")
+                    },
+                    recipeDecks = new List<AbstractDeck>()
+                    {
+                        new AbstractDeck()
+                        {
+                            loadData = new Dictionary<string, int>()
+                            {
+                                {"DeckDrawTestCard",1 }
+                            },
+                            resetonexhaustion = true
+                            
+                        }
+                    },
+                    deckeffects = new Dictionary<string, int>()
+                    {
+                        {"TestDeck" ,1 }
                     },
                     recipeAspectDictionary = new Dictionary<string, int>()
                     {
@@ -204,9 +221,11 @@ namespace PlentyFishFramework
                                 }
                             }
                         }
-                    }
+                    },
+                    ending = "DefaultEnding"
                 }},
                 {"TestRecipeLv3",new AbstractRecipe(){
+                    // 2个默认卡牌结算时触发的结果
                     index = 6,
                     stringIndex = "TestRecipeLv3",
                     label = "替代测试事件" ,
@@ -218,23 +237,195 @@ namespace PlentyFishFramework
                         { "TestCard" , 1 }
                     },
                     
-                    
+
+
                 }},
                 {"AddTestRecipeLv4",new AbstractRecipe(){
+                    // 事件执行时卡槽放入卡牌出发的结果
                     index = 7,
                     stringIndex = "AddTestRecipe",
                     label = "添加替代测试事件" ,
                     description = "这重历史变得更强壮了?",
+                    finishedLabel = "添加替代测试事件触发",
+                    finishedDescription = "历史向上擢升",
                     isStartable = false,
                     requireElementDictionary = new Dictionary<string, int>()
                     {
                         { "TestCard" , 3 }
                     },
+                    recipeLinker = new RecipeChainTrigger()
+                    {
+                        triggerNodes = new List<RecipeTriggerNode>()
+                        {
+                            new RecipeTriggerNode()
+                            {
+                                targetRecipeGroup = "DefaultGroup",
+                                targetRecipe = "ConnectTestRecipe",
+                                isAdditional = true,
+                                requipeAspects = new Dictionary<string, int>()
+                                {
+                                    { "TestCard" , 2 }
+                                }
+                            }
+                        }
+                    },
+                }},
+                {"ConnectTestRecipe",new AbstractRecipe(){
+                    // 在原有事件上触发的不结束连锁事件
+                    index = 8,
+                    stringIndex = "ConnectTestRecipe",
+                    label = "连锁测试事件" ,
+                    description = "这重历史正朝着更远的可能性延伸着?",
+                    finishedDescription = "历史长亘不息。",
+                    finishedLabel = "事件连锁触发",
+                    isStartable = false,
+                    isCreatable = false,
+                    warpup = 15,
+                    requireElementDictionary = new Dictionary<string, int>()
+                    {
+                        { "TestCard" , 2 }
+                    },
+                    
+                }},
+                {"DoubleDefaultRecipe",new AbstractRecipe(){
+                    // 在原有事件上触发的不结束连锁事件
+                    index = 9,
+                    stringIndex = "DoubleDefaultRecipe",
+                    label = "二连默认测试事件" ,
+                    description = "这重历史会前往分裂的哪一支?",
+                    finishedDescription = "历史分裂。",
+                    finishedLabel = "又一重历史在此刻开始转动",
+                    warpup = 10,
+                    requireElementDictionary = new Dictionary<string, int>()
+                    {
+                        { "DefaultCard" , 2 }
+                    },
+                    recipeLinker = new RecipeChainTrigger()
+                    {
+                        triggerNodes = new List<RecipeTriggerNode>()
+                        {
+                            new RecipeTriggerNode()
+                            {
+                                targetRecipeGroup = "DefaultGroup",
+                                targetRecipe = "AddDoubleDefaultRecipe",
+                                isAdditional = true,
+                                additionalVerb = "AddTestVerb",
+                                requipeAspects = new Dictionary<string, int>()
+                                {
+                                    { "DefaultCard" , 2 }
+                                }
+                            }
+                        }
+                    },
 
+                }},
+                {"AddDoubleDefaultRecipe",new AbstractRecipe(){
+                    // 在原有事件上触发的不结束连锁事件
+                    index = 10,
+                    stringIndex = "AddDoubleDefaultRecipe",
+                    label = "新建二连默认测试事件" ,
+                    description = "这重历史尚未成型...",
+                    finishedDescription = "历史成型。",
+                    finishedLabel = "这重历史回到了它应有的位置。",
+                    maxWarpup = 30,
+                    isCreatable = false,
+                    requireElementDictionary = new Dictionary<string, int>()
+                    {
+                        { "DefaultCard" , 2 }
+                    },
+
+                }},
+                 {"RecipeTriggerTestRecipe",new AbstractRecipe(){
+                    // 在原有事件上触发的不结束连锁事件
+                    index = 11,
+                    stringIndex = "RecipeTriggerTestRecipe",
+                    label = "事件XTrigger测试事件" ,
+                    description = "这个事件用于测试在事件具有特定性相时产生连锁事件的功能。",
+                    finishedDescription = "事件XTrigger测试成功执行完毕。",
+                    finishedLabel = "事件XTrigger测试事件执行完毕。",
+                    maxWarpup = 5,
+                    isCreatable = true,
+                    requireElementDictionary = new Dictionary<string, int>()
+                    {
+                        { "StoryCard" , 2 }
+                    },
+
+                }},
+                {"RecipeTriggerTestLinkRecipe",new AbstractRecipe(){
+                    // 在原有事件上触发的不结束连锁事件
+                    index = 12,
+                    stringIndex = "RecipeTriggerTestLinkRecipe",
+                    label = "事件XTrigger测试事件-连锁效果" ,
+                    description = "这个事件用于测试在事件具有特定性相时产生连锁事件后，所产生的连锁事件是否正确的功能。",
+                    finishedDescription = "事件XTrigger的连锁事件测试成功执行完毕。",
+                    finishedLabel = "事件XTrigger的连锁事件测试事件执行完毕。",
+                    maxWarpup = 5,
+                    isCreatable = false,
+                    //requireElementDictionary = new Dictionary<string, int>()
+                    //{
+                    //    { "StoryCard" , 2 }
+                    //},
 
                 }},
             }
         },
+        {"LifeCoreGroup",new Dictionary<string,AbstractRecipe>()
+            {
+                 {"LifeCoreBasicRecipe",new AbstractRecipe(){
+                    index = 0,
+                    stringIndex = "LifeCoreBasicRecipe",
+                    label = "维生反应堆" ,
+                    description = "制造电力，转化食物，人与非人的能源之所。",
+                    isStartable = false,
+                }},
+            }
+        },
+        //{"LifeCoreGroup",new Dictionary<string,AbstractRecipe>()
+        //    {
+        //         {"LifeCoreBasicRecipe",new AbstractRecipe(){
+        //            index = 0,
+        //            stringIndex = "LifeCoreBasicRecipe",
+        //            label = "维生反应堆" ,
+        //            description = "制造电力，转化食物，人与非人的能源之所。",
+        //            isStartable = false,
+        //        }},
+        //    }
+        //},
+        {"SpaceShipGroup",new Dictionary<string,AbstractRecipe>()
+            {
+                 {"SpaceShipBasicRecipe",new AbstractRecipe(){
+                    index = 0,
+                    stringIndex = "SpaceShipBasicRecipe",
+                    label = "已损坏的\"L8级远行者飞船\"" ,
+                    description = "一艘主要功能设施几乎损坏殆尽的飞船。如果我有足够的资源和对应的知识，也许我能修好它或者它的一部分。",
+                    isStartable = false,
+                }},
+                 {"Falling",new AbstractRecipe(){
+                    index = 1,
+                    stringIndex = "Falling",
+                    label = "坠毁!" ,
+                    description = "风，光，火焰，太阳，声音。剧烈的失重感冲击着我的大脑，我正向着某处未知的坐标坠落。",
+                    isStartable = false,
+                    isCreatable = false,
+                }},
+                {"Falled",new AbstractRecipe(){
+                    index = 2,
+                    stringIndex = "Falled",
+                    label = "紧急迫降!" ,
+                    description = "幸好，飞船没有落入某片恶地或者海洋，我成功从坠落余波中活了下来。",
+                    isStartable = false,
+                    isCreatable = false,
+                }},
+                {"FirstCheck",new AbstractRecipe(){
+                    index = 3,
+                    stringIndex = "FirstCheck",
+                    label = "勘察" ,
+                    description = "在一切开始之前，我需要先搞清楚情况如何：我落在何处，飞船情况怎样，还有多少可用资源。",
+                    isStartable = false,
+                    isCreatable = false,
+                }},
+            }
+        }
         //{"TestGroup",new Dictionary<string,AbstractRecipe>()
         //    {
         //         {"TestRecipe",new AbstractRecipe(){

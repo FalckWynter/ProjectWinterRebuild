@@ -30,6 +30,10 @@ namespace PlentyFishFramework
             for (int i = model.dragMonoList.Count - 1;i >= 0;i --)
             {
                 ICanDragComponentMono item = model.dragMonoList[i];
+                if(cardMono.BelongtoSlotMono == null)
+                {
+                    this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(item.GetComponent<ITableElement>(), item.GetComponent<ITableElement>().BelongtoSlotMono);
+                }
                 bool result = false;
                 if (item.GetComponent<CardMono>() != null)
                     result = this.GetSystem<GameSystem>().MonoStackCardToSlot(item.GetComponent<CardMono>(), cardMono.BelongtoSlotMono,TableElementMonoType.Card);

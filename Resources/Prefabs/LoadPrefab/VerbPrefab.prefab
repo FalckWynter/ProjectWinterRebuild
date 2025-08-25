@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 1883709770873105380}
   - component: {fileID: 6607254147623426110}
   - component: {fileID: 8421556135354721985}
+  - component: {fileID: 4237536410782437740}
   - component: {fileID: 1720251890895264685}
   - component: {fileID: 4981188304382822512}
   - component: {fileID: 1410946274077950697}
@@ -249,8 +250,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelObject: {fileID: 8628684757059250522}
   artwork: {fileID: 7406034874772400665}
+  verbSlotManager: {fileID: 0}
+  slotMonoList: []
   dragAudioMono: {fileID: 0}
   situationWindowMono: {fileID: 5938263736051040246}
+  isNeedRefresh: 0
+--- !u!114 &4237536410782437740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456746773132727303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f61949c66e2e48b7e42be5e40b5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verbMono: {fileID: 8421556135354721985}
+  countdownCanvasGameobject: {fileID: 6961521481368043057}
+  completionBadgeGameobject: {fileID: 1235093809322382693}
+  dumpButtonGameobject: {fileID: 748229688368871197}
+  recipeTimerMono: {fileID: 4679178816434432390}
+  numberIcon: {fileID: 3022465238989225782}
+  dumpButton: {fileID: 6909107587836596282}
 --- !u!222 &1720251890895264685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -364,6 +387,8 @@ GameObject:
   - component: {fileID: 2674418309773518682}
   - component: {fileID: 7914858814023360720}
   - component: {fileID: 6332841243717409567}
+  - component: {fileID: 6909107587836596282}
+  - component: {fileID: 635346640971941938}
   m_Layer: 5
   m_Name: DumpButton
   m_TagString: Untagged
@@ -429,6 +454,77 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6909107587836596282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748229688368871197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5764706, g: 0.88235295, b: 0.9372549, a: 1}
+    m_PressedColor: {r: 0.1254902, g: 0.44705883, b: 0.48235294, a: 1}
+    m_SelectedColor: {r: 0.5764706, g: 0.88235295, b: 0.9372549, a: 1}
+    m_DisabledColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SituationWindowMono, Assembly-CSharp
+        m_MethodName: CollectCurrentRecipe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &635346640971941938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748229688368871197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de30376ae8a2bff46aecfee7de2323d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  clickAudio: SituationCollectAll
+  HoverAudio: 
 --- !u!1 &1235093809322382693
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +536,7 @@ GameObject:
   - component: {fileID: 7381198523352433057}
   - component: {fileID: 3447720030007226746}
   - component: {fileID: 2675312363178676519}
+  - component: {fileID: 3022465238989225782}
   m_Layer: 5
   m_Name: CompletionBadge
   m_TagString: Untagged
@@ -505,6 +602,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3022465238989225782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235093809322382693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be7825ab17000345adebfa3d9ec7e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberText: {fileID: 4209988830186835923}
+  isHideNumberWhenValueIsOne: 1
 --- !u!1 &1715895621746272731
 GameObject:
   m_ObjectHideFlags: 0
@@ -16046,6 +16157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7980910187768381864}
+  - component: {fileID: 4679178816434432390}
   m_Layer: 5
   m_Name: CountdownCanvas
   m_TagString: Untagged
@@ -16075,6 +16187,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4679178816434432390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961521481368043057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215530f0e1f924943adcfb72a4741ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 3812943946868011845}
+  timeCircleImage: {fileID: 5737833065947472549}
 --- !u!1 &7501697572893644620
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,8 +29,9 @@ public class VerbICanDragComponentMono : ICanDragComponentMono, IPointerEnterHan
         }
 
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public override void OnPointerEnter(PointerEventData eventData)
         {
+            base.OnPointerEnter(eventData);
             // 设置颜色为亮白色，渐显
             glowFader.SetColor(UIStyle.hoverWhite);
             glowFader.Show();

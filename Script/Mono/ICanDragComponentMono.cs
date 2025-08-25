@@ -7,7 +7,7 @@ using QFramework;
 using UnityEngine.Events;
 namespace PlentyFishFramework
 {
-    public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler, IController, IBeginDragHandler
+    public class ICanDragComponentMono : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler, IController, IBeginDragHandler, IPointerEnterHandler
     {
         // 拖动组件 该物体可以被拖动
         public GameSystem gameSystem;
@@ -19,7 +19,7 @@ namespace PlentyFishFramework
         private Vector2 dragOffset;      // 新增：用于记录初始偏移
         public float dragThreshold = 0f; // 可调距离阈值
         // 物体是否可互动和可拖拽
-        CanvasGroup canvasGroup;
+        public CanvasGroup canvasGroup;
         public bool isCanBeDrag = true;
         // 拖拽相关动作订阅
         public UnityEvent<ICanDragComponentMono> onStartDrag = new UnityEvent<ICanDragComponentMono>();
@@ -27,11 +27,15 @@ namespace PlentyFishFramework
         public UnityEvent<ICanDragComponentMono> onDragFailed = new UnityEvent<ICanDragComponentMono>();
         public UnityEvent<ICanDragComponentMono> onDestroy = new UnityEvent<ICanDragComponentMono>();
         public int textIndex = 1;
+        public bool isCanBeDragInSlot = true;
+        public string hoverAudioName = "token_hover_OLD";
+        //public bool IsCanBeDragSlot = true;
 
         public virtual void Start()
         {
             gameSystem = this.GetSystem<GameSystem>();
             canvasGroup = this.GetComponent<CanvasGroup>();
+            isCanBeDragInSlot = true;
         }
 
         public IArchitecture GetArchitecture()
@@ -45,9 +49,11 @@ namespace PlentyFishFramework
             isDragging = false;
         }
 
-        public void OnDrag(PointerEventData eventData)
+        public virtual void OnDrag(PointerEventData eventData)
         {
+            //Debug.Log("拖拽中");
             if (isCanBeDrag == false) return;
+            if (isCanBeDragInSlot == false) return;
             if (!isDragging)
             {
                 // 如果没有在拖拽中，且距离小于拖拽阈值则暂时不动
@@ -102,10 +108,13 @@ namespace PlentyFishFramework
             }
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public virtual void OnEndDrag(PointerEventData eventData)
         {
+            //canvasGroup.blocksRaycasts = true;
             // 结束拖拽时结束拖拽订阅并重新启用射线阻挡
             if (isCanBeDrag == false) return;
+            if (isCanBeDragInSlot == false) return;
+
             //Debug.Log("结束拖拽");
             onEndDrag.Invoke(this);
             if (isDragging)
@@ -131,6 +140,11 @@ namespace PlentyFishFramework
         {
             // 被摧毁时调用摧毁事件
             onDestroy.Invoke(this);
+        }
+
+        public virtual void OnPointerEnter(PointerEventData eventData)
+        {
+            UtilSystem.PlaySound(hoverAudioName);
         }
     }
 }

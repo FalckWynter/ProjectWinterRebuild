@@ -13,7 +13,7 @@ public class GraphicFader : MonoBehaviour {
     public Color currentColor = Color.white;
 
     Graphic m_graphic;
-    Graphic graphic {
+    public Graphic graphic {
         get {
             if (m_graphic == null) { 
                 m_graphic = GetComponent<Graphic>();
@@ -32,6 +32,7 @@ public class GraphicFader : MonoBehaviour {
         }
 
         if (graphic.canvasRenderer.GetAlpha() > 0f) {
+            Debug.Log("开始削减线程");
             graphic.CrossFadeAlpha(0f, durationTurnOff, ignoreTimeScale);
             StartCoroutine(DelayDisable(durationTurnOff));
         }

@@ -14,15 +14,22 @@ namespace PlentyFishFramework
         public Image artwork;
         public TextMeshProUGUI countText;
         public RectTransform rect;
-        public int withNumberWidth = 85, noNumberWidth = 40;
+        public Button button;
+        public float withNumberAddWidth = 22.5f, noNumberWidth = 40;
+        public AbstractAspect currentAspect;
+        public void SetDetail(AbstractAspect aspect,int value)
+        {
+            currentAspect = aspect;
+            SetDetail(aspect.icon, value);
+        }
         // 设置性相图片和数量
-        public void SetDetail(string key, int value)
+        private void SetDetail(string key, int value)
         {
             Sprite icon = ImageDataBase.TryGetVerbImage(key);
             if (icon != null)
             SetDetail(icon, value);
         }
-        public void SetDetail(Sprite icon, int count)
+        private void SetDetail(Sprite icon, int count)
         {
             artwork.sprite = icon;
             countText.text = (count).ToString();
@@ -31,11 +38,16 @@ namespace PlentyFishFramework
                 countText.gameObject.SetActive(false);
                 rect.sizeDelta = new Vector2(noNumberWidth, rect.sizeDelta.y);
             }
+            else if(count <= 9)
+            {
+                countText.gameObject.SetActive(true);
+                rect.sizeDelta = new Vector2(noNumberWidth + withNumberAddWidth, rect.sizeDelta.y);
+
+            }
             else
             {
                 countText.gameObject.SetActive(true);
-                rect.sizeDelta = new Vector2(withNumberWidth, rect.sizeDelta.y);
-
+                rect.sizeDelta = new Vector2(noNumberWidth + 2 * withNumberAddWidth, rect.sizeDelta.y);
             }
 
         }
@@ -43,8 +55,13 @@ namespace PlentyFishFramework
         void Start()
         {
             rect = GetComponent<RectTransform>();
+            button = GetComponent<Button>();
+            button.onClick.AddListener(OpenShowAspectPanel);
         }
-
+        public void OpenShowAspectPanel()
+        {
+            UtilSystem.ShowAspect(currentAspect);
+        }
         // Update is called once per frame
         void Update()
         {

@@ -47,6 +47,10 @@ namespace PlentyFishFramework
                     label = "默认卡槽" ,
                     lore = "默认卡槽的描述",
                     icon = ImageDataBase.TryGetVerbImage("dream"),
+                    requipredAspectsDictionary = new Dictionary<string, int>()
+                    {
+                        { "DefaultAspect" , 1 }
+                    }
 
                 }
             },
@@ -58,7 +62,10 @@ namespace PlentyFishFramework
                     label = "测试卡槽" ,
                     lore = "这是一个测试卡槽",
                     icon = ImageDataBase.TryGetVerbImage("dream"),
-
+                    forbiddenAspectsDictionary = new Dictionary<string, int>()
+                    {
+                        { "DefaultAspect" , 1 }
+                    }
                 }
             },
             {
@@ -83,7 +90,8 @@ namespace PlentyFishFramework
                     slotPossibleShowVerbList = new List<string>()
                     {
                         "All"
-                    }
+                    },
+
 
                 }
             },
@@ -95,6 +103,10 @@ namespace PlentyFishFramework
                     label = "隐藏测试卡槽" ,
                     lore = "用于测试卡牌携带卡槽的隐藏功能正确性",
                     icon = ImageDataBase.TryGetVerbImage("dream"),
+                    slotPossibleShowVerbList = new List<string>()
+                    {
+                        "Hide"
+                    },
 
                 }
             },
@@ -106,7 +118,48 @@ namespace PlentyFishFramework
                     label = "事件携带卡槽" ,
                     lore = "用于事件执行中显示携带卡槽的功能正确性",
                     icon = ImageDataBase.TryGetVerbImage("dream"),
+                    essentialAspectsDictionary = new Dictionary<string, int>()
+                    {
+                        { "TestAspect" , 3 }
+                    },
+                }
+            },
+            {
+                "GreedyTestSlot",new AbstractSlot()
+                {
+                    index = 6,
+                    stringIndex = "GreedyTestSlot",
+                    label = "磁吸测试卡槽" ,
+                    lore = "用于测试强制抓取并固定卡牌的功能正确性",
+                    icon = ImageDataBase.TryGetVerbImage("dream"),
+                    isGreedy = true,
 
+                }
+            },
+           {
+                "ConsumeTestSlot",new AbstractSlot()
+                {
+                    index = 7,
+                    stringIndex = "ConsumeTestSlot",
+                    label = "消耗测试卡槽" ,
+                    lore = "用于测试执行事件消耗卡牌功能正确性",
+                    icon = ImageDataBase.TryGetVerbImage("dream"),
+                    isConsumes = true,
+                }
+            },
+            {
+                "StoryTestSlot",new AbstractSlot()
+                {
+                    index = 8,
+                    stringIndex = "StoryTestSlot",
+                    label = "磁吸故事测试卡槽" ,
+                    lore = "用于测试执行事件磁吸具有故事性相卡牌的功能正确性",
+                    icon = ImageDataBase.TryGetVerbImage("dream"),
+                    isGreedy = true,
+                    requipredAspectsDictionary = new Dictionary<string, int>()
+                    {
+                        {"StoryAspect" , 1 }
+                    }
                 }
             },
         };

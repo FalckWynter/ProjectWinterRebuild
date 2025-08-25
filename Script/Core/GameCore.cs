@@ -23,7 +23,8 @@ namespace PlentyFishFramework
         {
             architecture = (ProjectWinterArchitecture)this.GetArchitecture();
             utilSystem = this.GetSystem<UtilSystem>();
-            utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
+            GameObject ob = utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
+            //this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<ITableElement>(), null);
             gameModel = this.GetModel<PlentyFishFramework.GameModel>();
 
         }
@@ -33,6 +34,7 @@ namespace PlentyFishFramework
         void Update()
         {
             architecture.PreUpdate();
+            architecture.Update();
         }
         public void LateUpdate()
         {

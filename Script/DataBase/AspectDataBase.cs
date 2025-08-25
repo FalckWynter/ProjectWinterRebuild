@@ -29,6 +29,29 @@ namespace PlentyFishFramework
             lore = "被记叙之物在未刻历史中的过去。",
             icon = ImageDataBase.TryGetImage("TestImage1")
         }},
+        {"StoryAspect",new AbstractAspect(){
+            index = 1,
+            stringIndex = "StoryAspect",
+            label = "混沌历史" ,
+            lore = "此间尚未决定的所有可能性。",
+            icon = ImageDataBase.TryGetImage("StoryCard")
+        }},
+        {"Burned",new AbstractAspect(){
+            index = 2,
+            stringIndex = "Burned",
+            label = "已耗尽" ,
+            lore = "这张卡牌已经被某种途径使用过了。",
+            icon = ImageDataBase.TryGetImage("BurnedStoryCard"),
+            cardXtriggersList = new List<CardXTrigger>()
+            {
+                new CardXTrigger()
+                {
+                    requireAspect = "DefaultCard",
+                    requireCount = 1,
+                    triggerToCardStringid = "StoryCard"
+                }
+            }
+        }},
     };
     }
 }

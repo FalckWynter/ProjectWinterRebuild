@@ -71,6 +71,8 @@ namespace PlentyFishFramework
             {
 
             }
+            //if (verb.stringIndex == "AddTestVerb")
+            //    Debug.Log("当前事件" + verb.situation.currentRecipe.label);
         }
 
         public bool IsInSlot()
@@ -90,16 +92,89 @@ namespace PlentyFishFramework
             dragAudioMono.PlayGetClickAudio();
         }
 
+        // 3.1.1.1节修改 判断能放入哪个卡槽
         public bool CanStackWith(ICanBeStack other)
         {
             if (other is CardMono cardMono)
-                return true;
+            {
+                if (verb.situation.situationState == AbstractSituation.SituationState.Prepare)
+                {
+                    foreach (AbstractSlot slot in verb.slotList)
+                    {
+                        Debug.Log(cardMono.card.label + "检测卡槽" + slot.label + "当前物体数量" + slot.stackItemList.Count + "最大数量" + slot.maxSlotItemCount + "是否满足要求" + (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot)));
+                        if (slot.stackItemList.Count < slot.maxSlotItemCount)
+                        //if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                        {
+                            if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                                return true;
+
+                        }
+                    }
+                    return false;
+                }
+                else if (verb.situation.situationState == AbstractSituation.SituationState.Excuting)
+                {
+                    foreach (AbstractSlot slot in verb.verbRecipeSlotList)
+                    {
+                        if (slot.stackItemList.Count < slot.maxSlotItemCount)
+                        //if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                        {
+                            if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                                return true;
+
+                        }
+                    }
+                    return false;
+                }
+            }
             return false;
         }
-
+        // 3.1.1.1修改 将卡牌直接放入卡槽并打开面板
         public bool TryAddStack(ICanBeStack other)
         {
-            return true;
+            if (other is CardMono cardMono)
+            {
+                if (verb.situation.situationState == AbstractSituation.SituationState.Prepare)
+                {
+                    foreach (AbstractSlot slot in verb.slotList)
+                    {
+                        if (slot.stackItemList.Count < slot.maxSlotItemCount)
+                        {
+                            if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                            {
+                                gameSystem.MonoStackCardToSlot(cardMono, slot.slotMono, TableElementMonoType.Slot);
+                                if (situationWindowMono.gameObject.activeSelf == false)
+                                {
+                                    situationWindowMono.EnableWindow();
+                                }
+                                return true;
+                            }
+
+                        }
+                    }
+                }
+                else if (verb.situation.situationState == AbstractSituation.SituationState.Excuting)
+                {
+                    foreach (AbstractSlot slot in verb.verbRecipeSlotList)
+                    {
+                        if (slot.stackItemList.Count < slot.maxSlotItemCount)
+                        {
+                            if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
+                            {
+                                gameSystem.MonoStackCardToSlot(cardMono, slot.slotMono, TableElementMonoType.Slot);
+                                if (situationWindowMono.gameObject.activeSelf == false)
+                                {
+                                    situationWindowMono.EnableWindow();
+                                }
+                                return true;
+                            }
+
+                        }
+                    }
+                }
+            }
+            return false;
+
         }
 
         public bool TrySubStack(ICanBeStack other)
