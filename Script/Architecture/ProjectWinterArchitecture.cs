@@ -23,11 +23,17 @@ namespace PlentyFishFramework
             // 注册系统和数据模型
             Debug.Log("初始化");
             architecture = this;
+            // 初始化资源模块
+            this.RegisterModel<ResourceModel>(new ResourceModel());
+            this.RegisterSystem<ResourceSystem>(new ResourceSystem());
+            this.RegisterModel<LanguageDataBase>(new LanguageDataBase());
             this.RegisterModel<GameModel>(new GameModel());
             this.RegisterModel<RecipeModel>(new RecipeModel());
+            this.RegisterModel<LevelModel>(new LevelModel());
             this.RegisterSystem<UtilSystem>(new UtilSystem());
             this.RegisterSystem<GameSystem>(new GameSystem());
             this.RegisterSystem<RecipeSystem>(new RecipeSystem());
+            this.RegisterSystem<AudioManagerSystem>(new AudioManagerSystem());
 
             recipeSystem = this.GetSystem<RecipeSystem>();
             gameSystem = this.GetSystem<GameSystem>();
@@ -35,12 +41,12 @@ namespace PlentyFishFramework
             gameSystem.LateInit();
             recipeSystem.LateInit();
 
-            gameSystem.InitTable();
+            //gameSystem.InitTable();
+
             //this.RegisterModel<CachePoolModel>(new CachePoolModel());
             //this.RegisterModel<LevelModel>(new LevelModel());
             //this.RegisterModel<UIStateModel>(new UIStateModel());
             //this.RegisterSystem<CachePoolSystem>(new CachePoolSystem());
-            //this.RegisterSystem<LevelSystem>(new LevelSystem());
             //this.RegisterSystem<UIStateSystem>(new UIStateSystem());
             //uiSystem = this.GetSystem<UIStateSystem>();
             //levelSystem = this.GetSystem<LevelSystem>();

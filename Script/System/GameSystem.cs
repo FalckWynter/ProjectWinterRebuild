@@ -49,7 +49,10 @@ namespace PlentyFishFramework
             else
             {
                 if (elementType == TableElementMonoType.Slot)
+                {
                     UtilSystem.PlayAudio("card_drag_fail");
+                    MentionSystem.ShowMessage("不能放入这个卡槽","这件物体不能放入这个卡槽，请检查卡槽对放入卡牌的要求");
+                }
             }
 
             return result;
@@ -204,50 +207,121 @@ namespace PlentyFishFramework
             }
         }
         // 将卡牌移动到最近的空卡槽中
-        public void MoveCardToClosestNullGrid(ITableElement mono, SlotMono beforeSlotMono, int stepLength = 1,int posX = -1,int posY = -1)
+        //public void MoveCardToClosestNullGrid(ITableElement mono, SlotMono beforeSlotMono, int stepLength = 1,int posX = -1,int posY = -1)
+        //{
+        //    stepLength = mono.slotSize;
+        //    int x, y;
+        //    if (beforeSlotMono == null || beforeSlotMono.slot.isSlot)
+        //    {
+        //        x = gameModel.table.defaultX;
+        //        y = gameModel.table.defaultY;
+        //    }
+        //    else
+        //    {
+        //        x = beforeSlotMono.x;
+        //        y = beforeSlotMono.y;
+        //    }
+        //    int maxX = gameModel.table.slotMonos.GetLength(0);
+        //    int maxY = gameModel.table.slotMonos.GetLength(1);
+
+        //    for (int yOffset = 0; yOffset < maxY; yOffset += stepLength)
+        //    {
+        //        // y层次扩展：0 → +1 → -1 → +2 → -2 → ...
+        //        int[] yCandidates = { y + yOffset, y - yOffset };
+        //        foreach (int currentY in yCandidates)
+        //        {
+        //            if (currentY < 0 || currentY >= maxY) continue;
+
+        //            for (int xOffset = 0; xOffset < maxX; xOffset += stepLength)
+        //            {
+        //                // x层次扩展：0 → +1 → -1 → +2 → -2 → ...
+        //                int[] xCandidates = { x - xOffset, x + xOffset };
+        //                foreach (int currentX in xCandidates)
+        //                {
+        //                    if (currentX < 0 || currentX >= maxX) continue;
+
+        //                    var slot = gameModel.table.slotMonos[currentX, currentY];
+        //                    if (slot.slot.stackItemList.Count == 0)
+        //                    {
+        //                        StackElementWithGrid(mono, slot);
+        //                        return;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        public void MoveCardToClosestNullGrid(
+            ITableElement mono,
+            SlotMono beforeSlotMono,
+            int stepLength = 1,
+            int posX = -1,
+            int posY = -1)
         {
-            int x, y;
+            stepLength = mono.slotSize;
+            int startX, startY;
             if (beforeSlotMono == null || beforeSlotMono.slot.isSlot)
             {
-                x = gameModel.table.defaultX;
-                y = gameModel.table.defaultY;
+                startX = gameModel.table.defaultX;
+                startY = gameModel.table.defaultY;
             }
             else
             {
-                x = beforeSlotMono.x;
-                y = beforeSlotMono.y;
+                startX = beforeSlotMono.x;
+                startY = beforeSlotMono.y;
             }
+
             int maxX = gameModel.table.slotMonos.GetLength(0);
             int maxY = gameModel.table.slotMonos.GetLength(1);
 
-            for (int yOffset = 0; yOffset < maxY; yOffset += stepLength)
+            // ---------- 1. 当前层 ----------
+            if (CheckRowForEmptySlot(mono, startX, startY, maxX))
+                return;
+
+            // ---------- 2. 向下逐层 ----------
+            for (int y = startY - stepLength; y >= 0; y -= stepLength)
             {
-                // y层次扩展：0 → +1 → -1 → +2 → -2 → ...
-                int[] yCandidates = { y + yOffset, y - yOffset };
-                foreach (int currentY in yCandidates)
-                {
-                    if (currentY < 0 || currentY >= maxY) continue;
+                if (CheckRowForEmptySlot(mono, startX, y, maxX))
+                    return;
+            }
 
-                    for (int xOffset = 0; xOffset < maxX; xOffset += stepLength)
-                    {
-                        // x层次扩展：0 → +1 → -1 → +2 → -2 → ...
-                        int[] xCandidates = { x - xOffset, x + xOffset };
-                        foreach (int currentX in xCandidates)
-                        {
-                            if (currentX < 0 || currentX >= maxX) continue;
-
-                            var slot = gameModel.table.slotMonos[currentX, currentY];
-                            if (slot.slot.stackItemList.Count == 0)
-                            {
-                                StackElementWithGrid(mono, slot);
-                                return;
-                            }
-                        }
-                    }
-                }
+            // ---------- 3. 向上逐层 ----------
+            for (int y = startY + stepLength; y < maxY; y += stepLength)
+            {
+                if (CheckRowForEmptySlot(mono, startX, y, maxX))
+                    return;
             }
         }
+        /// <summary>
+        /// 在指定 Y 层，从 startX 开始，先向右扫描，再向左扫描
+        /// </summary>
+        private bool CheckRowForEmptySlot(ITableElement mono, int startX, int y, int maxX)
+        {
+            // 先向右
+            for (int x = startX; x < maxX; x += mono.slotSize)
+            {
+                var slot = gameModel.table.slotMonos[x, y];
+                if (slot.slot.stackItemList.Count == 0)
+                {
+                    StackElementWithGrid(mono, slot);
+                    return true;
+                }
+            }
 
+            // 再向左
+            for (int x = startX - mono.slotSize; x >= 0; x -= mono.slotSize)
+            {
+                var slot = gameModel.table.slotMonos[x, y];
+                if (slot.slot.stackItemList.Count == 0)
+                {
+                    StackElementWithGrid(mono, slot);
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
 
         // 将卡牌从卡槽中移除注册 这一层用于处理mono降本的数据 包含对场景物体的处理
@@ -497,12 +571,12 @@ namespace PlentyFishFramework
             if (slotMono != null && slotMono.slot.isSlot)
             {
                 //Debug.Log("重设父物体到" + slotMono.gameObject.name);
-                item.transform.SetParent(slot.transform, worldPositionStays: false); // 新增
+                item.transform.SetParent(slot.transform, worldPositionStays: true); // 新增
             }
             else
             {
                 //Debug.Log("重设父物体到网格父物体" + slotMono.gameObject.name);
-                item.transform.SetParent(UtilSystem.cardParent.transform, worldPositionStays: false); // 新增
+                item.transform.SetParent(UtilSystem.cardParent.transform, worldPositionStays: true); // 新增
             }
 
             // mono 的父物体是 parent
@@ -599,17 +673,33 @@ namespace PlentyFishFramework
 
         #region 其他系统使用的函数，由于涉及到Mono被分割到这里
         // 将卡牌实体弹出到最近可用的卡槽
-        public void OutputCardToTable(ITableElement elementMono, SlotMono slotMono)
+        public void OutputCardToTable(ITableElement elementMono, SlotMono slotMono,string dropZoneID = "")
         {
+
             if (slotMono != null && slotMono.slot.isSlot == false)
             {
-                Debug.Log("叠放目标" + slotMono.slot.label);
+                //Debug.Log("叠放目标" + slotMono.slot.label);
                 StackCardToASlot(elementMono, slotMono, false);
             }
             else
             {
-                Debug.Log("移动到空格");
-                MoveCardToClosestNullGrid(elementMono, slotMono);
+                // 有放置区可用
+                if (dropZoneID != "")
+                {
+                    // 改为移动到放置区
+                    DropZoneDragHelper dropZone = GameModel.GetDropZone(dropZoneID);
+                    // Debug.Log("移动到放置区" + dropZoneID + "目标" + dropZone.targetSlot.name);
+
+                    //StackCardToASlot(elementMono, dropZone.targetSlot, false);
+                    MoveCardToClosestNullGrid(elementMono, dropZone.targetSlot);
+
+
+                }
+                else
+                {
+                    // Debug.Log("移动到空格");
+                    MoveCardToClosestNullGrid(elementMono, slotMono);
+                }
             }
         }
         // 直接将卡牌注册到行动框，并输入性相
@@ -654,10 +744,13 @@ namespace PlentyFishFramework
             // 更新所有桌面上卡牌的流逝计数器
             for (int i = gameModel.tableCardMonoList.Count - 1; i >= 0; i-- )
             {
+
                 var item = gameModel.tableCardMonoList[i];
                 if (item == null) continue;
                 AbstractCard card = item.card;
+
                 if (card == null) continue;
+
                 //Debug.Log("卡牌" + card.label + "状态" + card.isCanDecayByTime + "剩余时间" + card.lifeTime);
 
                 if (card.isCanDecayByTime == false) continue;

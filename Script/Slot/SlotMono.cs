@@ -35,7 +35,7 @@ namespace PlentyFishFramework
         {
             this.slot = slot;
             slotLabel.text = slot.label;
-            slotLabel.text = slot.label + slot.createIndex.ToString();
+            //slotLabel.text = slot.label + slot.createIndex.ToString();
             gameObject.name = slot.stringIndex;
             if(!slot.isSlot)
             {

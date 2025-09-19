@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace PlentyFishFramework
 {
-    public class VerbMono : MonoBehaviour, IPointerClickHandler, ITableElement,IController
+    public class VerbMono : BasicElementMono, IPointerClickHandler, ITableElement,IController
     {
         // 基本数据订阅
         public GameSystem gameSystem;
@@ -18,12 +18,6 @@ namespace PlentyFishFramework
         // 行动框图片物体
         public Image artwork;
         // 从属卡槽关系
-        public SlotMono BelongtoSlotMono { get { return belongtoSlotMono; } set => belongtoSlotMono = value; }
-        public SlotMono BeforeSlotMono { get => beforeSlotMono; set => beforeSlotMono = value; }
-        public SlotMono LastGridMono { get => lastGridMono; set => lastGridMono = value; }
-        private SlotMono belongtoSlotMono;
-        private SlotMono beforeSlotMono;
-        private SlotMono lastGridMono;
 
         // 行动框卡槽管理器
         public GameObject verbSlotManager;
@@ -34,6 +28,8 @@ namespace PlentyFishFramework
         public SituationWindowMono situationWindowMono;
         // 是否需要更新 以避免海量update降低性能
         public bool isNeedRefresh = false;
+
+        public int slotSize => 2;
 
         public void LoadVerbData(AbstractVerb verb)
         {
@@ -101,7 +97,7 @@ namespace PlentyFishFramework
                 {
                     foreach (AbstractSlot slot in verb.slotList)
                     {
-                        Debug.Log(cardMono.card.label + "检测卡槽" + slot.label + "当前物体数量" + slot.stackItemList.Count + "最大数量" + slot.maxSlotItemCount + "是否满足要求" + (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot)));
+                        //Debug.Log(cardMono.card.label + "检测卡槽" + slot.label + "当前物体数量" + slot.stackItemList.Count + "最大数量" + slot.maxSlotItemCount + "是否满足要求" + (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot)));
                         if (slot.stackItemList.Count < slot.maxSlotItemCount)
                         //if (RecipeSystem.IsCardMeetSlotsAspectRequire(cardMono.card, slot))
                         {

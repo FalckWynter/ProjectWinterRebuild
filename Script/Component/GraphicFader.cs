@@ -2,20 +2,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
-[RequireComponent(typeof(Graphic))]
-public class GraphicFader : MonoBehaviour {
+public class GraphicFader : MonoBehaviour
+{
 
-    // 移植的密教模拟器脚本 处理光环效果
     public bool ignoreTimeScale = true;
     public float durationTurnOn = 0.2f;
     public float durationTurnOff = 0.1f;
     public Color currentColor = Color.white;
 
     Graphic m_graphic;
-    public Graphic graphic {
-        get {
-            if (m_graphic == null) { 
+    Graphic graphic
+    {
+        get
+        {
+            if (m_graphic == null)
+            {
                 m_graphic = GetComponent<Graphic>();
             }
 
@@ -23,78 +24,91 @@ public class GraphicFader : MonoBehaviour {
         }
     }
 
-    public void Hide(bool instant = false) {
+    public void Hide(bool instant = false)
+    {
         StopAllCoroutines();
 
-        if (instant || graphic.gameObject.activeInHierarchy == false || durationTurnOn <= 0f) {
+        if (instant || graphic.gameObject.activeInHierarchy == false || durationTurnOn <= 0f)
+        {
             SetAlpha(0f);
             return;
         }
 
-        if (graphic.canvasRenderer.GetAlpha() > 0f) {
-            Debug.Log("开始削减线程");
+        if (graphic.canvasRenderer.GetAlpha() > 0f)
+        {
             graphic.CrossFadeAlpha(0f, durationTurnOff, ignoreTimeScale);
             StartCoroutine(DelayDisable(durationTurnOff));
         }
     }
 
-    IEnumerator DelayDisable(float duration) {
+    IEnumerator DelayDisable(float duration)
+    {
         yield return new WaitForSeconds(duration);
         graphic.gameObject.SetActive(false);
     }
 
-    public void Show(bool instant = false) {
+    public void Show(bool instant = false)
+    {
         StopAllCoroutines();
 
-        if (instant || durationTurnOn <= 0f) {
+        if (instant || durationTurnOn <= 0f)
+        {
             graphic.gameObject.SetActive(true);
             SetAlpha(1f);
             return;
         }
 
-        if (graphic.gameObject.activeSelf == false) {
+        if (graphic.gameObject.activeSelf == false)
+        {
             graphic.gameObject.SetActive(true);
             graphic.canvasRenderer.SetColor(currentColor);
             graphic.canvasRenderer.SetAlpha(0f);
         }
 
-        if (graphic.canvasRenderer.GetAlpha() < 1f) {
+        if (graphic.canvasRenderer.GetAlpha() < 1f)
+        {
             graphic.CrossFadeAlpha(1f, durationTurnOn, ignoreTimeScale);
         }
     }
 
-    public void SetAlpha(float alpha) {
+    public void SetAlpha(float alpha)
+    {
         if (Mathf.Approximately(alpha, 0f))
             graphic.gameObject.SetActive(false);
         else
             graphic.canvasRenderer.SetAlpha(alpha);
     }
 
-    public void SetColor(Color color) {
+    public void SetColor(Color color)
+    {
         if (currentColor == color)
             return;
 
         currentColor = color;
 
-        if (graphic.gameObject.activeInHierarchy) { 
+        if (graphic.gameObject.activeInHierarchy)
+        {
             graphic.CrossFadeColor(color, 0f, true, true);
         }
     }
 
-    
+
     // Ensure we can see the color in the editor.
-    void OnEnable() {
+    void OnEnable()
+    {
         graphic.canvasRenderer.SetColor(currentColor);
     }
-    void OnValidate() {
+    void OnValidate()
+    {
         graphic.canvasRenderer.SetColor(currentColor);
     }
     // Copies the graphic's current color to the Fader and sets the image tint to white
-    void Reset() {
+    void Reset()
+    {
         currentColor = graphic.color;
         graphic.color = Color.white;
         graphic.canvasRenderer.SetColor(currentColor);
     }
-        
+
 
 }

@@ -60,6 +60,8 @@ namespace PlentyFishFramework
         // 2.3节加入
         // 事件结算时产生的卡牌修饰
         public List<CardEffect> effects = new List<CardEffect>();
+        // 简单版的增减修饰
+        public Dictionary<string, int> cardEffects = new Dictionary<string,int>();
 
         // 2.3节加入
         // 事件开始执行时携带的卡槽
@@ -77,6 +79,8 @@ namespace PlentyFishFramework
         public List<AbstractDeck> recipeDecks = new List<AbstractDeck>();
         // 3.4.1 事件通向的结局
         public string ending;
+        // 事件能被执行的次数
+        public int recipeExcuteMaxCount = -1;
         public RecipeExcutingState recipeExcutingState
         {
             get
@@ -87,7 +91,7 @@ namespace PlentyFishFramework
             }
         }
         public enum RecipeExcutingState { Prepare, Excuting, Finished, None }
-
+        public string belongToGroup;
 
         public AbstractRecipe GetNewCopy(AbstractRecipe recipe)
         {
@@ -110,6 +114,7 @@ namespace PlentyFishFramework
             retRecipe.isExcuting = recipe.isExcuting;
             retRecipe.isFinished = recipe.isFinished;
             retRecipe.excutingDescription = recipe.excutingDescription;
+            retRecipe.finishedDescription = recipe.finishedDescription;
             retRecipe.excutingLabel = recipe.excutingLabel;
             retRecipe.recipeSlots = new List<AbstractSlot>();
             foreach (AbstractSlot slot in recipe.recipeSlots)
@@ -126,6 +131,9 @@ namespace PlentyFishFramework
             foreach (var item in this.recipeDecks)
                 retRecipe.recipeDecks.Add(item.GetNewCopy());
             retRecipe.ending = recipe.ending;
+            retRecipe.recipeExcuteMaxCount = recipe.recipeExcuteMaxCount;
+            retRecipe.belongToGroup = recipe.belongToGroup;
+            retRecipe.cardEffects = recipe.cardEffects;
             return retRecipe;
         }
 

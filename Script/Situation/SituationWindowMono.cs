@@ -302,6 +302,7 @@ namespace PlentyFishFramework
             }
 
         }
+        public string inspctor;
         // 检查并设置事件UI状态
         public void CheckRecipeUI()
         {
@@ -320,12 +321,13 @@ namespace PlentyFishFramework
             {
                 UpdateCollectUI();
             }
+            inspctor = situation.situationState.ToSafeString();
 
         }
         // 关闭所有事件状态控件
         public void CloseAllUI()
         {
-            verbThresholdsDominion.SetActive(false);
+            verbThresholdsDominion.GetComponent<CanvasGroup>().alpha = 0 ;
             recipeThresholdsDominion.SetActive(false);
             storageDominion.SetActive(false);
             outputDominion.SetActive(false);
@@ -350,7 +352,9 @@ namespace PlentyFishFramework
         }
         public void UpdatePrepareUI()
         {
-            verbThresholdsDominion.SetActive(true);
+            //verbThresholdsDominion.SetActive(true);
+            verbThresholdsDominion.GetComponent<CanvasGroup>().alpha = 1;
+
             startButton.gameObject.SetActive(true);
 
             SetWindowRecipeUIText();

@@ -162,6 +162,34 @@ namespace PlentyFishFramework
                     }
                 }
             },
+            {
+                "LandingShipSlotUser",new AbstractSlot()
+                {
+                    index = 9,
+                    stringIndex = "LandingShipSlotUser",
+                    label = "使用者" ,
+                    lore = "谁来使用这座逃生舱?",
+                    icon = ImageDataBase.TryGetVerbImage("moon"),
+                    requipredAspectsDictionary = new Dictionary<string, int>()
+                    {
+                        {"Memory" , 1 },
+                        {"Mortal" , 1 }
+                    }
+                }
+            },
+           {
+                "LandingShipSlotTool",new AbstractSlot()
+                {
+                    index = 10,
+                    stringIndex = "LandingShipSlotTool",
+                    label = "工具" ,
+                    lore = "何物将被使用?",
+                    icon = ImageDataBase.TryGetVerbImage("moon"),
+                    requipredAspectsDictionary = new Dictionary<string, int>()
+                    {
+                    }
+                }
+            },
         };
     }
 }

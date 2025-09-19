@@ -52,6 +52,20 @@ namespace PlentyFishFramework
                 }
             }
         }},
+        {"Memory",new AbstractAspect(){
+            index = 3,
+            stringIndex = "Memory",
+            label = "回忆" ,
+            lore = "那些我所铭记和我所遗忘的。",
+            iconName = "memory"
+        }},
+        {"Mortal",new AbstractAspect(){
+            index = 4,
+            stringIndex = "Mortal",
+            label = "凡人" ,
+            lore = "“我们如此习惯活着，以至于不愿意死亡。”——托马斯·布朗",
+            iconName = "mortal"
+        }},
     };
     }
 }

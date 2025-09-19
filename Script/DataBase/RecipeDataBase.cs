@@ -23,23 +23,27 @@ namespace PlentyFishFramework
                 return null;
             }
         }
-        public static AbstractRecipe TryGetRecipe(string key, string group)
+        public static AbstractRecipe TryGetRecipe(string group, string key)
         {
-            //Debug.Log("尝试获取事件" + key + "的" + group);
             if (recipeDataBase.ContainsKey(group))
             {
                 if (recipeDataBase[group].ContainsKey(key))
                 {
+                    recipeDataBase[group][key].belongToGroup = group;
                     return recipeDataBase[group][key];
                 }
                 else
                 {
+                    Debug.Log("尝试获取事件" + key + "的" + group);
+                    recipeDataBase[defaultGroupKey][errorGroupKey].belongToGroup = defaultGroupKey;
                     return recipeDataBase[defaultGroupKey][errorGroupKey];
 
                 }
             }
             else
             {
+                Debug.Log("尝试获取事件" + key + "的" + group);
+                recipeDataBase[defaultGroupKey][errorRecipeKey].belongToGroup = defaultGroupKey;
                 return recipeDataBase[defaultGroupKey][errorRecipeKey];
             }
             //return recipeDataBase["DefaultGroup"]["DefaultCard"].GetNewCopy();
@@ -222,7 +226,6 @@ namespace PlentyFishFramework
                             }
                         }
                     },
-                    ending = "DefaultEnding"
                 }},
                 {"TestRecipeLv3",new AbstractRecipe(){
                     // 2个默认卡牌结算时触发的结果
@@ -345,6 +348,7 @@ namespace PlentyFishFramework
                     finishedLabel = "事件XTrigger测试事件执行完毕。",
                     maxWarpup = 5,
                     isCreatable = true,
+                    ending = "Return",
                     requireElementDictionary = new Dictionary<string, int>()
                     {
                         { "StoryCard" , 2 }
@@ -369,14 +373,91 @@ namespace PlentyFishFramework
                 }},
             }
         },
-        {"LifeCoreGroup",new Dictionary<string,AbstractRecipe>()
+        {"LandingShipGroup",new Dictionary<string,AbstractRecipe>()
             {
-                 {"LifeCoreBasicRecipe",new AbstractRecipe(){
+                 {"LandingShipBasicRecipe",new AbstractRecipe(){
                     index = 0,
-                    stringIndex = "LifeCoreBasicRecipe",
-                    label = "维生反应堆" ,
-                    description = "制造电力，转化食物，人与非人的能源之所。",
+                    stringIndex = "LandingShipBasicRecipe",
+                    label = "逃生舱" ,
+                    description = "紧急脱离模块。\n" +
+                     "设计寿命七十二小时。\n" +
+                     "我的过去、现在与将来。\n",
                     isStartable = false,
+                }},
+                {"LandingShipInit",new AbstractRecipe(){
+                    index = 1,
+                    stringIndex = "LandingShipInit",
+                    label = "苏醒" ,
+                    description = "这个事件不会开始。",
+                    excutingDescription = "昏迷逐渐散去，我在逃生舱内部重新获得知觉。\n空气循环低鸣与指示灯闪烁证明系统仍在维持最低限度功能，而这也是我幸存至今的唯一原因。",
+                    finishedDescription = "我在失去意识之前经历了什么?",
+
+                    isStartable = false,
+                    isCreatable = false,
+                    effects = new List<CardEffect>()
+                    {
+                        new CardEffect
+                        {
+                            filter = null, // 不需要筛选
+                            maxTargets = 0, // 可省略，结构型操作不走筛选目标流程
+                            actions = new List<CardEffectAction>
+                            {
+                                new CardEffectAction
+                                {
+                                    type = "AddCard",
+                                    key = "LandingMemory",
+                                    value = 1
+                                }
+                            }
+                        }
+                    },
+ 
+                    //cardEffects = new Dictionary<string, int>()
+                    //{
+                    //    { "LandingMemory",1}
+                    //}
+                }},
+                {"LandingShipRecallMemory",new AbstractRecipe(){
+                    index = 2,
+                    stringIndex = "LandingShipRecallMemory",
+                    label = "回忆：从穹宇坠落" ,
+                    description = "我是如何落入这番境地的?",
+                    excutingDescription = "我记得那一刻。我随航船前行时遇见空难，危急时有人推我入此处，将我送出闸门。——而我又是谁?",
+                    finishedDescription = "——我是，探索未知的人，开辟道路的人，接引过去的人，1SO-L8号星船的向导。",
+                    isStartable = true,
+                    requireElementDictionary = new Dictionary<string, int>()
+                    {
+                        {"LandingMemory" ,1 }
+                    },
+                    cardEffects = new Dictionary<string, int>()
+                    {
+                        {"Guider" , 1 }
+                    },
+                    effects = new List<CardEffect>()
+                    {
+                        new CardEffect()
+                        {
+                             filter = new CardFilter
+                            {
+                                rules = new List<CardFilterRule>
+                                {
+                                    new CardFilterRule
+                                    {
+                                        type = "StringIndexEquals",
+                                        key = "LandingMemory"
+                                    }
+                                }
+                            },
+                            maxTargets = 1,
+                            actions = new List<CardEffectAction>
+                            {
+                                new CardEffectAction
+                                {
+                                    type = "RemoveCard"
+                                }
+                            }
+                        }
+                    }
                 }},
             }
         },

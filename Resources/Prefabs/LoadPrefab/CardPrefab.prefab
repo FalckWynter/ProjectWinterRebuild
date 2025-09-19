@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   startPointerPos: {x: 0, y: 0}
-  isKeepOffset: 0
+  isKeepOffset: 1
   dragThreshold: 0
   canvasGroup: {fileID: 0}
   isCanBeDrag: 1
@@ -555,10 +555,13 @@ MonoBehaviour:
       m_Calls: []
   textIndex: 1
   isCanBeDragInSlot: 1
+  isPlayHoverAudio: 1
+  hoverAudioName: token_hover_OLD
   mono: {fileID: 0}
   glowFader: {fileID: 0}
   dragAudioMono: {fileID: 0}
   inspectorOb: {fileID: 0}
+  graphicFader: {fileID: 8372619771143774659}
 --- !u!114 &1351396379093935468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,7 +1493,6 @@ GameObject:
   - component: {fileID: 3940848914867152346}
   - component: {fileID: 1674672551549091414}
   - component: {fileID: 2703348055879587044}
-  - component: {fileID: 3039920579931679497}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1615,17 +1617,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3039920579931679497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8106617504520863726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  textUI: {fileID: 0}

@@ -9,22 +9,13 @@ using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 namespace PlentyFishFramework
 {
-    public class CardMono : MonoBehaviour, IController, ITableElement, IPointerClickHandler
+    public class CardMono : BasicElementMono, IController, ITableElement, IPointerClickHandler
     {
         // 卡牌脚本组件
 
         // 抽象逻辑数据
         public AbstractCard card;
-        // 区别在于 belongtoSlot会在开始拖动时被取消，而beforeSlot在拖动结束完成计算时才取消
-        // 7.20 区别在于，belongtoSlot记录的是当前所属的卡槽，开始拖动时就取消
-        // BeforeSlot记录上一个有效的任意卡槽，包括桌面网格
-        // LastGridMono记录上一个桌面网格，以便于回到桌面上
-        public SlotMono BelongtoSlotMono { get { return belongtoSlotMono; } set => belongtoSlotMono = value; }
-        public SlotMono BeforeSlotMono { get => beforeSlotMono; set => beforeSlotMono = value; }
-        public SlotMono LastGridMono { get => lastGridMono; set { lastGridMono = value; /*Debug.Log(gameObject.name + "设置为" + lastGridMono.gameObject.name); */} }
-        private SlotMono belongtoSlotMono;
-        private SlotMono beforeSlotMono;
-        private SlotMono lastGridMono;
+
 
         // 对游戏系统和数据的订阅
         public GameModel model;
@@ -40,6 +31,8 @@ namespace PlentyFishFramework
         public int stackCount = 1;
         public int StackCount { get { return stackCount; } set { stackCount = value; cardCountMono.SetCount(stackCount); } }
 
+        public int slotSize { get => 1; }
+
         public CardICanDragComponentMono cardICanDragComponentMono;
 
         private void Start()
@@ -54,7 +47,7 @@ namespace PlentyFishFramework
         public void LoadCardData(AbstractCard card)
         {
             artwork.sprite = card.icon;
-            label.text = card.label + card.createIndex;
+            label.text = card.label ;
             this.card = card;
             UpdateCardDecayView();
         }
@@ -97,6 +90,7 @@ namespace PlentyFishFramework
         // 摧毁卡牌实体
         public void DestroySelf()
         {
+            if (gameSystem == null) gameSystem = this.GetSystem<GameSystem>();
             // 从拖拽列表中移除
             gameSystem.RemoveDragListen(this.GetComponent<ICanDragComponentMono>());
             // 解除卡槽订阅
@@ -175,7 +169,6 @@ namespace PlentyFishFramework
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("点击");
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 //UtilModel.tokenDetailWindow.ShowWindowForCard(card);

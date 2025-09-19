@@ -7,15 +7,17 @@ using UnityEngine.Events;
 
 namespace PlentyFishFramework
 {
-    public class AbstractVerb 
+    public class AbstractVerb :AbstractElement
     {
         // 基础要素
-        public int index;
-        public string stringIndex, label, lore, comment;
-        public string iconName { set { iconname = value; } get { if (iconname == "") return stringIndex; return iconname; } }
-        private string iconname = "";
-        public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetVerbImage(iconName); return artwork; } }
-        private Sprite artwork;
+        //public int index;
+        //public string stringIndex, label, lore, comment;
+        //public string iconName { set { iconname = value; } get { if (iconname == "") return stringIndex; return iconname; } }
+        //private string iconname = "";
+        //public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetVerbImage(iconName); return artwork; } }
+        //private Sprite artwork;
+
+        public string cardDropZoneID = "CardDropZone";
 
         // 行动框所属的实体脚本
         public VerbMono verbMono;
@@ -54,6 +56,10 @@ namespace PlentyFishFramework
 
         // 记录行动框正在执行的事件的卡槽 *直接建立对当前事件的引用
         public List<AbstractSlot> verbRecipeSlotList => situation.currentRecipe.recipeSlots;
+        public override Sprite TryGetIcon()
+        {
+            return ImageDataBase.TryGetVerbImage(iconName);
+        }
         public AbstractVerb GetNewCopy()
         {
             return GetNewCopy(this);

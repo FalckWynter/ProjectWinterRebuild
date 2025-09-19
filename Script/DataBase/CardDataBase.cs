@@ -161,6 +161,37 @@ namespace PlentyFishFramework
 
             }
         }},
+         {"Guider",new AbstractCard(){
+            index = 6,
+            stringIndex = "Guider",
+            label = "\"向导\"" ,
+            lore = "探索道路之人，开辟未来之人，离开过去之人。",
+            icon = ImageDataBase.TryGetImage("guider"),
+            aspectDictionary = new Dictionary<string, int>()
+            {
+                {"Mortal" , 1 }
+            },
+            cardSlotList = new List<AbstractSlot>()
+            {
+
+            }
+        }},
+        {"LandingMemory",new AbstractCard(){
+            index = 6,
+            stringIndex = "LandingMemory",
+            label = "回忆:从穹宇坠落" ,
+            lore = "风、火焰、太阳、光芒、声音。我还记得那一刻发生了什么吗？",
+            icon = ImageDataBase.TryGetImage("brownflower"),
+            aspectDictionary = new Dictionary<string, int>()
+            {
+                {"Memory" , 1 }
+            },
+            cardSlotList = new List<AbstractSlot>()
+            {
+
+            },
+           
+        }},
     };
     }
 }

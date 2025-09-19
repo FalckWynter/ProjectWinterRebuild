@@ -41,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -130}
+  m_AnchoredPosition: {x: 0, y: -133.29001}
   m_SizeDelta: {x: 550, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4102519471262589164
@@ -291,8 +291,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &511487736507432623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,8 +1516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &2520535463116999348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,8 +2122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!114 &7878696317553343253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2432,8 +2444,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Fascination
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 924035b7778230945bf7c1c414c6a332, type: 2}
-  m_sharedMaterial: {fileID: 21087872997083736, guid: 924035b7778230945bf7c1c414c6a332, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
+  m_sharedMaterial: {fileID: 3681683566793018075, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2531,8 +2543,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &5073364330466625005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,8 +2696,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &5078432042500726035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,8 +3224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &6724325927415356804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,8 +3400,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &7109692493605263130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,8 +4537,8 @@ MonoBehaviour:
   m_text: Light LEAKS through the CRACKS. My mind is BRIGHTER than it EVER was. THE
     HIGHER I RISE THE MORE I SEE.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 924035b7778230945bf7c1c414c6a332, type: 2}
-  m_sharedMaterial: {fileID: 21087872997083736, guid: 924035b7778230945bf7c1c414c6a332, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
+  m_sharedMaterial: {fileID: 3681683566793018075, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4608,8 +4636,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   textUI: {fileID: 0}
+  textContentKey: 
+  isLabelUI: 1
+  isPermitUpdateFont: 1
+  defaultContent: 
+  isPrintUpdateMention: 0
 --- !u!1 &9208870119084332534
 GameObject:
   m_ObjectHideFlags: 0

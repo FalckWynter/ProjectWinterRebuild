@@ -93,7 +93,27 @@ namespace PlentyFishFramework
 
                     }
                 }
-            }
+            },
+            {
+                "LandingShip",new AbstractVerb()
+                {
+                    index = 4,
+                    stringIndex = "LandingShip",
+                    label = "逃生舱" ,
+                    lore = "紧急脱离模块。设计寿命七十二小时。我的过去、现在与将来。",
+                    //icon = ImageDataBase.TryGetVerbImage("addTestVerb"),
+                    iconName = "moon",
+                    defaultSituationKey = "LandingShipSituation",
+                    verbSlotList = new List<AbstractSlot>()
+                    {
+                        SlotDataBase.TryGetSlot("LandingShipSlotUser"),
+                        SlotDataBase.TryGetSlot("LandingShipSlotTool"),
+
+
+
+                    }
+                }
+            },
         };
     }
 }

@@ -8,6 +8,10 @@ namespace PlentyFishFramework
     {
         // 选择界面的描述
         public string description = "This is a Legacy";
+        // 职业已解锁的粗体描述
+        public string legacyUnlockedDescription = "This legacy had been unlocked.";
+        // 职业未解锁时的粗体描述
+        public string legacylockedDescription = "This legacy is waiting for unlock.";
         // 游戏开始时的描述
         public string startDescription = "No Start Description";
         // 要监视的性相或者要素名称
@@ -24,6 +28,10 @@ namespace PlentyFishFramework
         public List<string> fromEndingList = new List<string>();
         // 哪些职业不会成为这场游戏后的备选职业
         public List<string> excludesOnEnding = new List<string>();
+        // 初始带有的事件
+        public List<LegacyInitGroup> initLegacyRecipe = new List<LegacyInitGroup>();
+        // 是否可用 为false时不会被读取
+        public bool isPermitLoad = true;
 
         public AbstractLegacy GetNewCopy()
         {
@@ -45,8 +53,19 @@ namespace PlentyFishFramework
             legacy.newStart = this.newStart;
             legacy.fromEndingList = new List<string>(this.fromEndingList);
             legacy.excludesOnEnding = new List<string>(this.excludesOnEnding);
-
+            legacy.isPermitLoad = this.isPermitLoad;
+            legacy.legacyUnlockedDescription = this.legacyUnlockedDescription;
+            legacy.legacylockedDescription = this.legacylockedDescription;
+            legacy.isPermitLoad = this.isPermitLoad;
+            legacy.initLegacyRecipe = this.initLegacyRecipe;
             return legacy;
+        }
+        public class LegacyInitGroup
+        {
+            // 初始自带事件
+            public string InitWithRecipeGroup, InitWithRecipeKey;
+            // 事件发生在的Verb
+            public string startVerbID;
         }
     }
 }

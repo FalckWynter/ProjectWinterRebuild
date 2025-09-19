@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 4766953009783670941}
   - component: {fileID: 755533816609060263}
   - component: {fileID: 3200488030696733080}
+  - component: {fileID: 2195693301476866218}
   m_Layer: 5
   m_Name: ButtonWithLabel
   m_TagString: Untagged
@@ -419,3 +420,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2195693301476866218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296034421547747184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de30376ae8a2bff46aecfee7de2323d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  clickAudio: UI_ButtonClick
+  HoverAudio: token_hover_OLD
+  closeAudioName: UI_ButtonClose

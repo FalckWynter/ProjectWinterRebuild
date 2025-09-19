@@ -1,0 +1,24 @@
+﻿{
+  "developers": [
+    {
+      "label": "程序",
+      "description": "FalckWynter",
+      "iconName": "icon_programmer"
+    },
+    {
+      "label": "美术",
+      "description": "N/A",
+      "iconName": "icon_artist"
+    },
+    {
+      "label": "音乐",
+      "description": "N/A",
+      "iconName": "icon_music"
+    },
+    {
+      "label": "策划",
+      "description": "FalckWynter",
+      "iconName": "icon_designer"
+    }
+  ]
+}

@@ -11,5 +11,7 @@ namespace PlentyFishFramework
         public SlotMono BelongtoSlotMono { get; set; }
         public SlotMono BeforeSlotMono { get; set; }
         public SlotMono LastGridMono { get; set; }
+
+        public int slotSize { get;  }
     }
 }

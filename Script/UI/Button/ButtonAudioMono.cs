@@ -9,12 +9,14 @@ namespace PlentyFishFramework
     public class ButtonAudioMono : ICanPlayAudioComponentMono, IPointerEnterHandler
     {
         public Button button;
+
         public string clickAudio = "UI_ButtonClick", HoverAudio = "token_hover_OLD";
         public string closeAudioName = "UI_ButtonClose";
         private void Start()
         {
             button = GetComponent<Button>();
             button.onClick.AddListener(PlayClickAudio);
+
         }
         public void PlayClickAudio()
         {

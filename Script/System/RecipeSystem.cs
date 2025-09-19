@@ -1,9 +1,9 @@
 using QFramework;
 using QFramework.PointGame;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace PlentyFishFramework
 {
@@ -71,7 +71,7 @@ namespace PlentyFishFramework
             // 订阅事件信息
             verb.situation.recipeTextList.Add(new AbstractSituation.RecipeTextElement(currentRecipe.excutingLabel, currentRecipe.excutingDescription));
             verb.OnVerbDataChanged.Invoke(verb, AbstractVerb.VerbExchangeReason.RecipeStarted);
-
+            RecipeDataBase.TryGetRecipe(currentRecipe.belongToGroup, currentRecipe.stringIndex).recipeExcuteMaxCount--;
             // 将事件信息绑定到事件容器中
 
         }
@@ -112,13 +112,26 @@ namespace PlentyFishFramework
             {
                 foreach(var recipePair in RecipeDataBase.TryGetRecipeGroup(recipeGroup))
                 {
-                    if(recipePair.Value.isCreatable && IsVerbHaveEnoughRecipeElement(verb,recipePair.Value))
+                    if(recipePair.Value.isCreatable && IsVerbHaveEnoughRecipeElement(verb,recipePair.Value) && IsRecipeHaveEnoughCount(recipePair.Value))
                     {
                         recipe = recipePair.Value;
                     }
                 }
             }
             return recipe;
+        }
+        public bool IsRecipeHaveEnoughCount(AbstractRecipe recipe)
+        {
+            if(recipe == null)
+            {
+                Debug.Log("传入空的事件");
+                return false;
+            }
+            if (recipe.recipeExcuteMaxCount < 0)
+                return true;
+            if (recipe.recipeExcuteMaxCount == 0)
+                return false;
+            return true;
         }
         // 是否行动框有满足事件要求的所有性相
         public bool IsVerbHaveEnoughRecipeElement(AbstractVerb verb, AbstractRecipe recipe)
@@ -267,7 +280,7 @@ namespace PlentyFishFramework
             if (node != null && node.isAdditional == false)
             {
                 //Debug.Log("目标" + node.targetRecipeGroup + "," + node.targetRecipe);
-                verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup);
+                verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe);
             }
 
             // 如果将要发生的事件不同 则改为发生即将到来的事件 对卡槽的处理已经在之前结束了 这里计算新Recipe的形式
@@ -339,12 +352,100 @@ namespace PlentyFishFramework
             {
                 effect.Apply(verb.verbCardList);
             }
+            // 计算卡牌的修饰
+            CalculateCardEffect(verb,recipe);
             //3.2.1.2 计算对卡牌的耗尽
             TranslateBurrnedCardToNewCard(verb.verbCardList, verb);
             // 计算要抽出的卡牌
             CalculateVerbRecipeDeckDraws(verb);
             //PrintVerbCardList(verb);
 
+        }
+        public void CalculateCardEffect(AbstractVerb verb,AbstractRecipe recipe)
+        {
+            foreach(var pair in recipe.cardEffects)
+            {
+                if(pair.Value > 0)
+                {
+                    AbstractCard card = CardDataBase.TryGetCard(pair.Key);
+                    if(card != null)
+                    {
+                        gameSystem.DirectAddCardToVerb(card,verb);
+                    }
+                }
+                else if(pair.Value < 0)
+                {
+                    // 需要销毁的数量（取绝对值）
+                    int needDestroy = Math.Abs(pair.Value);
+                    int destroyed = 0;
+
+                    // 优先销毁 stringIndex = pair.Key 的卡牌
+                    List<AbstractCard> candidates = FindCardsByStringIndex(verb,pair.Key);
+                    foreach (var c in candidates)
+                    {
+                        if (destroyed >= needDestroy) break;
+                        gameSystem.RemoveCardElementFromVerb(c,verb);
+                        verb.verbCardList.Remove(c);
+                        destroyed++;
+                    }
+
+                    // 如果数量不足，销毁带有该性相的卡
+                    if (destroyed < needDestroy)
+                    {
+                        int remain = needDestroy - destroyed;
+                        List<AbstractCard> aspectCandidates = FindCardsByAspect(verb,pair.Key);
+
+                        foreach (var c in aspectCandidates)
+                        {
+                            if (destroyed >= needDestroy) break;
+
+                            // 该卡是否具有该性相?
+                            if (c.aspectDictionary.ContainsKey(pair.Key))
+                            {
+                                gameSystem.RemoveCardElementFromVerb(c, verb);
+                                verb.verbCardList.Remove(c);
+                                destroyed++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 在指定 verb 的卡牌列表里找 stringIndex 等于 key 的卡
+        public List<AbstractCard> FindCardsByStringIndex(AbstractVerb verb, string key)
+        {
+            List<AbstractCard> result = new List<AbstractCard>();
+            foreach (var card in verb.verbCardList)
+            {
+                if (card.stringIndex == key)
+                {
+                    result.Add(card);
+                }
+            }
+            return result;
+        }
+
+        // 在指定 verb 的卡牌列表里找含有某个性相的卡
+        public List<AbstractCard> FindCardsByAspect(AbstractVerb verb, string key)
+        {
+            List<AbstractCard> result = new List<AbstractCard>();
+            foreach (var card in verb.verbCardList)
+            {
+                if (card.aspectDictionary.ContainsKey(key))
+                {
+                    result.Add(card);
+                }
+            }
+
+            // 优先销毁贡献小的
+            result.Sort((a, b) =>
+            {
+                int va = a.aspectDictionary.ContainsKey(key) ? a.aspectDictionary[key] : int.MaxValue;
+                int vb = b.aspectDictionary.ContainsKey(key) ? b.aspectDictionary[key] : int.MaxValue;
+                return vb.CompareTo(va);
+            });
+
+            return result;
         }
         public void CalculateVerbRecipeDeckDraws(AbstractVerb verb)
         {
@@ -411,7 +512,7 @@ namespace PlentyFishFramework
                         GameObject ob = this.GetSystem<UtilSystem>().CreateVerbGameObject(newVerb);
                         VerbMono newVerbMono = ob.GetComponent<VerbMono>();
                         newVerb = newVerbMono.verb;
-                        AbstractRecipe newRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup).GetNewCopy();
+                        AbstractRecipe newRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe).GetNewCopy();
                         newVerb.situation.possibleRecipe = newRecipe;
                         StartVerbSituation(newVerb);
                         gameSystem.MoveCardToClosestNullGrid(newVerbMono, null, 2);
@@ -424,7 +525,7 @@ namespace PlentyFishFramework
                 if (node != null && node.isAdditional == true)
                 {
                     Debug.Log("目标" + node.targetRecipeGroup + "," + node.targetRecipe);
-                    verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup);
+                    verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe);
                     // 切换recipe
                     UnRegisterCurrentRecipeFromVerb(verb);
                     verb.situation.currentRecipe = verb.situation.possibleRecipe.GetNewCopy();
@@ -470,17 +571,17 @@ namespace PlentyFishFramework
                             GameObject ob = this.GetSystem<UtilSystem>().CreateVerbGameObject(newVerb);
                             targetVerbMono = ob.GetComponent<VerbMono>();
                             newVerb = targetVerbMono.verb;
-                            //AbstractRecipe newRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup).GetNewCopy();
+                            //AbstractRecipe newRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe).GetNewCopy();
                             //newVerb.situation.possibleRecipe = newRecipe;
                             //StartVerbSituation(newVerb);
                             gameSystem.MoveCardToClosestNullGrid(targetVerbMono, null, 2);
                         }
                     }
-                    AddLinkRecipeToVerb(RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup), targetVerbMono.verb);
+                    AddLinkRecipeToVerb(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe), targetVerbMono.verb);
                     //else
                     //{
                     //    // 否则将新事件添加到该行动框的等待列表
-                    //    verbMono.verb.situation.linkRecipeList.Add(RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup));
+                    //    verbMono.verb.situation.linkRecipeList.Add(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe));
                     //}
                 }
                 else
@@ -490,12 +591,12 @@ namespace PlentyFishFramework
                     {
                         // 替换并开始新的事件
                         Debug.Log("目标" + node.targetRecipeGroup + "," + node.targetRecipe);
-                        //verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup);
+                        //verb.situation.possibleRecipe = RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe);
                         //// 切换recipe
                         //UnRegisterCurrentRecipeFromVerb(verb);
                         //verb.situation.currentRecipe = verb.situation.possibleRecipe.GetNewCopy();
                         //SetVerbRecipeStarted(verb, verb.situation.currentRecipe);
-                        AddLinkRecipeToVerb(RecipeDataBase.TryGetRecipe(node.targetRecipe, node.targetRecipeGroup), verb);
+                        AddLinkRecipeToVerb(RecipeDataBase.TryGetRecipe(node.targetRecipeGroup,node.targetRecipe), verb);
                         //UtilSystem.PlayAudio("SituationLoop");
                     }
                     else
@@ -664,7 +765,7 @@ namespace PlentyFishFramework
                 GameObject child = parent.GetChild(i).gameObject;
                 CardMono cardMono = child.GetComponent<CardMono>();
                 if (cardMono == null) continue;
-                gameSystem.OutputCardToTable(cardMono, cardMono.LastGridMono);
+                gameSystem.OutputCardToTable(cardMono, cardMono.LastGridMono,verb.cardDropZoneID);
                 cardMono.RestoreOriginalRectTransform();
             }
 

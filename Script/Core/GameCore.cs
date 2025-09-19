@@ -9,10 +9,26 @@ namespace PlentyFishFramework
 {
     public class GameCore : MonoBehaviour, IController
     {
+        private static GameCore instance;
+
+        void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                // 如果你希望 GameCore 在切换场景时保留，就加上这一行：
+                // DontDestroyOnLoad(gameObject);
+            }
+            else if (instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
         // 游戏核心脚本
         UtilSystem utilSystem;
         GameModel gameModel;
-        ProjectWinterArchitecture architecture;
+        static ProjectWinterArchitecture architecture;
         public IArchitecture GetArchitecture()
         {
             return ProjectWinterArchitecture.Interface;
@@ -23,9 +39,10 @@ namespace PlentyFishFramework
         {
             architecture = (ProjectWinterArchitecture)this.GetArchitecture();
             utilSystem = this.GetSystem<UtilSystem>();
-            GameObject ob = utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
+            gameModel = this.GetModel<GameModel>();
+            DontDestroyOnLoad(this);
+            //GameObject ob = utilSystem.CreateCardGameObject(CardDataBase.TryGetCard("DefaultCard"));
             //this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<ITableElement>(), null);
-            gameModel = this.GetModel<PlentyFishFramework.GameModel>();
 
         }
 

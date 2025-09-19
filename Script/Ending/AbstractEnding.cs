@@ -11,5 +11,9 @@ namespace PlentyFishFramework
         public AnimType animType = AnimType.None;
         public enum EndingType { Good,Bad,Normal,None}
         public enum AnimType { LightCool,LightEvil,LightNormal,None}
+        public override Sprite TryGetIcon()
+        {
+            return ImageDataBase.TryGetEndingImage(iconName);
+        }
     }
 }

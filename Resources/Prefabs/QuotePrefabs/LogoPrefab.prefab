@@ -144,6 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4473558458949855386}
   - component: {fileID: 6906111127588653535}
+  - component: {fileID: 2840574833931512995}
   m_Layer: 5
   m_Name: LogoPrefab
   m_TagString: Untagged
@@ -181,6 +182,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564806966859679050}
   m_CullTransparentMesh: 1
+--- !u!114 &2840574833931512995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564806966859679050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2dacd2dbf3d70488f6585d7b65bbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 8027547574437008434}
+  content: {fileID: 780585105534525044}
+  foregroundMask: {fileID: 7691161516516789672}
+  fadeDuration: 1
+  minStayTime: 1
+  autoStayTime: 3
+  waitForPlayerInput: 1
+  callbackValue: 0
 --- !u!1 &8027547574437008434
 GameObject:
   m_ObjectHideFlags: 0

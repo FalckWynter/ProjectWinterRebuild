@@ -8,7 +8,10 @@ namespace PlentyFishFramework
     {
         public bool isVisible = true;
         public List<CardXTrigger> cardXtriggersList = new List<CardXTrigger>();
-
+        public override Sprite TryGetIcon()
+        {
+            return ImageDataBase.TryGetAspectImage(iconName);
+        }
         public AbstractAspect GetNewCopy(AbstractAspect element)
         {
             //性相不存在复制的概念，只作为数据库存在

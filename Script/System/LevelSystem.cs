@@ -1,18 +1,16 @@
+using QFramework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSystem : MonoBehaviour
+namespace PlentyFishFramework
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelSystem : AbstractSystem
     {
-        
-    }
+        protected override void OnInit()
+        {
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
     }
 }

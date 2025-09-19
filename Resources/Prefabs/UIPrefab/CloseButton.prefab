@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5749031034689030761}
   - component: {fileID: 5568096032181057513}
   - component: {fileID: 5569810364588318445}
-  - component: {fileID: 6112457360743137942}
   - component: {fileID: 9039713060234501542}
   m_Layer: 5
   m_Name: CloseButton
@@ -134,20 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6112457360743137942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537624057285453573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fbfcd314739af43885481540794d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  textUI: {fileID: 0}
 --- !u!114 &9039713060234501542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +148,4 @@ MonoBehaviour:
   button: {fileID: 0}
   clickAudio: UI_ButtonClose
   HoverAudio: token_hover_OLD
+  closeAudioName: UI_ButtonClose

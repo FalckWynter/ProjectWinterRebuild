@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace PlentyFishFramework
 {
-    public class AbstractCard : ICopyAble<AbstractCard>, ICanBeEqualCompare<AbstractCard>
+    public class AbstractCard : AbstractElement,ICopyAble<AbstractCard>, ICanBeEqualCompare<AbstractCard>
     {
         // 基本要素
         public static int sortIndex = 1;
-        public int index, createIndex;
-        public string stringIndex, label, lore, comment;
-        public string iconName { set { iconname = value; } get { if (iconname == "") return stringIndex; return iconname; } }
-        private string iconname = "";
-        public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetImage(iconName); return artwork; } }
-        private Sprite artwork;
+        public int createIndex;
+        //public string stringIndex, label, lore, comment;
+        //public string iconName { set { iconname = value; } get { if (iconname == "") return stringIndex; return iconname; } }
+        //private string iconname = "";
+        //public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetImage(iconName); return artwork; } }
+        //private Sprite artwork;
         // 卡牌对应的脚本
         public CardMono cardMono;
         // 卡牌携带的性相
@@ -46,6 +46,10 @@ namespace PlentyFishFramework
         {
             createIndex = sortIndex;
             sortIndex++;
+        }
+        public override Sprite TryGetIcon()
+        {
+            return ImageDataBase.TryGetImage(iconName);
         }
         public AbstractCard GetNewCopy()
         {
@@ -89,6 +93,8 @@ namespace PlentyFishFramework
             // Debug.Log("比较结果" + (index == other.index));
             if (index != other.index) return false;
             if (!UtilSystem.AreDictionariesEqual(aspectDictionary, other.aspectDictionary))
+                return false;
+            if (other.lifeTime != lifeTime)
                 return false;
 
             return isEqual;

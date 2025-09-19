@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8293791556317958160}
   - component: {fileID: 9068661596348806143}
-  - component: {fileID: 1769752187}
   - component: {fileID: 1484887652}
   - component: {fileID: 3279257565199857834}
   - component: {fileID: 2060356217191801051}
+  - component: {fileID: 1463741760012927307}
   m_Layer: 8
   m_Name: OPTab
   m_TagString: Untagged
@@ -36,7 +36,6 @@ RectTransform:
   - {fileID: 3584063221948660538}
   - {fileID: 3278159685383090979}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -69,20 +68,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1769752187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3878855859381347522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191d5aa583b747b4d884f18c608c34bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TabImage: {fileID: 3017198297447481527}
-  TabText: {fileID: 1916968374669361679}
 --- !u!114 &1484887652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +112,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769752187}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsPanelTab, Assembly-CSharp
         m_MethodName: Activate
         m_Mode: 1
@@ -177,6 +162,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1463741760012927307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878855859381347522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1437e76641c63d4f9c75a05c6976f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4505224616835105234
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +206,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8293791556317958160}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -286,7 +282,6 @@ GameObject:
   - component: {fileID: 1714782279116342342}
   - component: {fileID: 1916968374669361679}
   - component: {fileID: 501240592}
-  - component: {fileID: 4920426513020871599}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -307,7 +302,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8293791556317958160}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -344,9 +338,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Audio
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b925783294fd8cb49862e058e1931f2b, type: 2}
-  m_sharedMaterial: {fileID: 21723337095257772, guid: b925783294fd8cb49862e058e1931f2b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
+  m_sharedMaterial: {fileID: 3681683566793018075, guid: 17141694a514ba54ca9255cb19eaa0c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -370,7 +363,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.6
+  m_fontSize: 12
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -432,21 +425,3 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4920426513020871599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6874920312545494254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83c98b9569822d429150a33ef1efa2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locLabel: 
-  fontStyle: 2
-  forceFontLanguage: 
-  highContrastPermissibleInContext: 1
-  highContrastBold: 1
-  forceBold: 0

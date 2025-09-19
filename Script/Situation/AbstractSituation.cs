@@ -12,7 +12,7 @@ namespace PlentyFishFramework
         public string stringIndex, label, lore, comment;
         public string iconName { set { iconname = value; } get { if (iconname == "") return stringIndex; return iconname; } }
         private string iconname = "";
-        public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetImage(iconName); return artwork; } }
+        public Sprite icon { set { artwork = value; } get { if (artwork == null) artwork = ImageDataBase.TryGetVerbImage(iconName); return artwork; } }
         private Sprite artwork;
         // 事件容器中当前的事件执行状态
         public SituationState situationState = SituationState.Prepare;
@@ -58,7 +58,7 @@ namespace PlentyFishFramework
             if (retSituation.possibleRecipeGroupKeyList.Count == 0)
                 retSituation.possibleRecipeGroupKeyList.Add(basicRecipeGroupKey);
             retSituation.recipeTextList = new List<RecipeTextElement>(element.recipeTextList);
-            retSituation.basicRecipe = RecipeDataBase.TryGetRecipe(retSituation.basicRecipeKey, retSituation.basicRecipeGroupKey).GetNewCopy();
+            retSituation.basicRecipe = RecipeDataBase.TryGetRecipe( retSituation.basicRecipeGroupKey, retSituation.basicRecipeKey).GetNewCopy();
             retSituation.possibleRecipe = retSituation.basicRecipe;
             retSituation.currentRecipe = retSituation.basicRecipe;
 

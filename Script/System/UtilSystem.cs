@@ -12,14 +12,10 @@ namespace PlentyFishFramework
     {
         public GameModel gameModel;
         public RecipeModel recipeModel;
-        public static GameObject cardParent,dragParent,panelParent,cardSpawnPlace;
+        public static GameObject cardParent,dragParent,panelParent,cardSpawnPlace,asyncSceneLoader;
         protected override void OnInit()
         {
-            // 注册基本内容
-            cardParent = GameObject.Find("MainCanvas/CardParent");
-            dragParent = GameObject.Find("MainCanvas/DragParent");
-            panelParent = GameObject.Find("MainCanvas/PanelParent");
-            cardSpawnPlace = GameObject.Find("MainCanvas/CardSpawnPlace");
+
             gameModel = this.GetModel<GameModel>();
             recipeModel = this.GetModel<RecipeModel>();
         }
@@ -154,6 +150,36 @@ namespace PlentyFishFramework
             //cardPrefab.transform.parent = cardParent.transform;
             return slotPrefab;
         }
+        public static GameObject CreateVerbDropZone(string key,Vector2 position = default)
+        {
+            if (position == default)
+                position = Vector2.zero;
+            GameObject prefab = PrefabDataBase.TryGetPrefab("VerbDropZone");
+            prefab = GameObject.Instantiate(prefab);
+            DropZoneDragHelper mono = prefab.GetComponent<DropZoneDragHelper>();
+            mono.dropZoneStringID = key;
+            mono.gameObject.name = key;
+            prefab.transform.SetParent(GameModel.dropZoneParent);
+            mono.GetComponent<RectTransform>().anchoredPosition = position;
+            mono.CheckToCloestGrid();
+            GameModel.RegisterDropZone(key, mono);
+            return prefab;
+        }
+        public static GameObject CreateCardDropZone(string key,Vector2 position = default)
+        {
+            if (position == default)
+                position = Vector2.zero;
+            GameObject prefab = PrefabDataBase.TryGetPrefab("CardDropZone");
+            prefab = GameObject.Instantiate(prefab);
+            DropZoneDragHelper mono = prefab.GetComponent<DropZoneDragHelper>();
+            mono.dropZoneStringID = key;
+            mono.gameObject.name = key;
+            prefab.transform.SetParent(GameModel.dropZoneParent);
+            mono.GetComponent<RectTransform>().anchoredPosition = position;
+            mono.CheckToCloestGrid();
+            GameModel.RegisterDropZone(key, mono);
+            return prefab;
+        }
 
         public static bool AreDictionariesEqual<TKey, TValue>(Dictionary<TKey, TValue> a, Dictionary<TKey, TValue> b)
         {
@@ -204,20 +230,40 @@ namespace PlentyFishFramework
         }
         public void LoadLegacy(string legacyStringIndex)
         {
-            LoadLegacy(LegacyDataBase.TryGetLegacy(legacyStringIndex));
+            var legacy = LegacyDataBase.TryGetLegacy(legacyStringIndex);
+            Debug.Log("载入职业" + legacy.stringIndex);
+            if (legacy == null) return;
+            LoadLegacy(legacy);
         }
         public void LoadLegacy(AbstractLegacy legacy)
         {
-            foreach(var item in legacy.startingVerbsIDList)
+            foreach (var item in legacy.startingVerbsIDList)
             {
                 GameObject ob = CreateVerbGameObject(VerbDataBase.TryGetVerb(item));
-                this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<VerbMono>(), null);
+                AbstractVerb verb = ob.GetComponent<VerbMono>().verb;
 
+                //this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<VerbMono>(), null);
+                this.GetSystem<GameSystem>().OutputCardToTable(ob.GetComponent<VerbMono>(), null, GameModel.DefaultVerbDropZoneID);
+                AbstractLegacy.LegacyInitGroup group = legacy.initLegacyRecipe.Find(x => x.startVerbID == item);
+                if (group != null)
+                {
+                    var recipe = RecipeDataBase.TryGetRecipe( group.InitWithRecipeGroup, group.InitWithRecipeKey);
+
+                    if (recipe != null)
+                    {
+                        verb.situation.possibleRecipe = recipe;
+                        this.GetSystem<RecipeSystem>().ExchangeVerbCurrentRecipe(recipe, verb);
+                        this.GetSystem<RecipeSystem>().StartVerbSituation(verb);
+                    }
+
+                }
             }
             foreach (var item in legacy.effects)
             {
                 GameObject ob = CreateCardGameObject(CardDataBase.TryGetCard(item));
-                this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<CardMono>(),null);
+                //this.GetSystem<GameSystem>().MoveCardToClosestNullGrid(ob.GetComponent<CardMono>(),null);
+                this.GetSystem<GameSystem>().OutputCardToTable(ob.GetComponent<CardMono>(), null,GameModel.DefaultCardDropZoneID);
+
             }
         }
         public void LoadEnding(string endingStringIndex)
@@ -226,7 +272,9 @@ namespace PlentyFishFramework
         }
         public void LoadEnding(AbstractEnding ending)
         {
-            Debug.Log("创建结局" + ending.label + "内容" + ending.lore);
+            //Debug.Log("创建结局" + ending.label + "内容" + ending.lore);
+            UtilModel.gameSceneDataManager.willEndingData = new GameEningDataArgs() { endingKey = ending.stringIndex} ;
+            asyncSceneLoader.GetComponent<AsyncSceneLoader>().LoadEndingScene();
         }
 
         private static IEnumerator ShowCardAfterDelay(AbstractCard card)
@@ -246,6 +294,18 @@ namespace PlentyFishFramework
         {
             if (key == null || key == "") return;
             AudioKit.PlaySound(AudioDataBase.TryGetAudio(key));
+        }
+        public static GameObject CreateMentionPrefab()
+        {
+            return CreatePrefab("NotificationWindow", UtilModel.notifyHolder);
+        }
+        public static GameObject CreatePrefab(string name,GameObject parent)
+        {
+            GameObject prefab = PrefabDataBase.TryGetPrefab(name);
+            if (prefab == null) return null;
+            prefab = GameObject.Instantiate(prefab);
+            prefab.transform.SetParent(parent.transform);
+            return prefab;
         }
     }
 }

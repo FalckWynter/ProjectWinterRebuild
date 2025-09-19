@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UIStyle;
 
 namespace PlentyFishFramework
 {
@@ -18,23 +19,26 @@ namespace PlentyFishFramework
         public ICanDragPlayAudioComponentMono dragAudioMono; 
         public GameObject inspectorOb;
         public GameModel gameModel;
-        public void Update()
-        {
-            //if (mono.BelongtoSlotMono != null)
-            //    inspectorOb = mono.BelongtoSlotMono.gameObject;
-            //else
-            //    inspectorOb = null;
-          //  Debug.Log("BelongtoSlotMono: " + (mono.BelongtoSlotMono != null) +
-          //", Slot: " + (mono.BelongtoSlotMono != null ? (mono.BelongtoSlotMono.slot != null).ToString() : "null") +
-          //", isGreedy: " + (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null ? mono.BelongtoSlotMono.slot.isGreedy.ToString() : "null") +
-          //", isCanBeDrag: " + isCanBeDrag + "卡槽名字" + mono.belongtoSlotMono.slot.label);
+        public GraphicFader graphicFader;
+        //public void Update()
+        //{
+        //    //if (mono.BelongtoSlotMono != null)
+        //    //    inspectorOb = mono.BelongtoSlotMono.gameObject;
+        //    //else
+        //    //    inspectorOb = null;
+        //  //  Debug.Log("BelongtoSlotMono: " + (mono.BelongtoSlotMono != null) +
+        //  //", Slot: " + (mono.BelongtoSlotMono != null ? (mono.BelongtoSlotMono.slot != null).ToString() : "null") +
+        //  //", isGreedy: " + (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null ? mono.BelongtoSlotMono.slot.isGreedy.ToString() : "null") +
+        //  //", isCanBeDrag: " + isCanBeDrag + "卡槽名字" + mono.belongtoSlotMono.slot.label);
 
-            //if (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null && mono.BelongtoSlotMono.slot.isGreedy && isCanBeDrag)
-            //{
-            //    isCanBeDrag = false;
-            //    return;
-            //}
-        }
+        //    //if (mono.BelongtoSlotMono != null && mono.BelongtoSlotMono.slot != null && mono.BelongtoSlotMono.slot.isGreedy && isCanBeDrag)
+        //    //{
+        //    //    isCanBeDrag = false;
+        //    //    return;
+        //    //}
+        //}
+
+    
         public override void Start()
         {
             base.Start();
@@ -108,20 +112,22 @@ namespace PlentyFishFramework
         {
             if (isCanBeDrag == false) return;
             base.OnPointerEnter(eventData);
-            Debug.Log("尝试启用颜色");
             // 设置颜色为亮白色，渐显
             glowFader.SetColor(UIStyle.hoverWhite);
+            //glowFader.gameObject.SetActive(true);
             glowFader.Show();
+            //Canvas.ForceUpdateCanvases();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             // if (isCanBeDrag == false) return;
-            Debug.Log("尝试关闭颜色");
             // 颜色先变为粉色
-            glowFader.SetColor(UIStyle.hoverWhite);
+            //glowFader.gameObject.SetActive(false);
             // 然后渐隐
             glowFader.Hide();
+            //Canvas.ForceUpdateCanvases();
+
         }
     }
 }

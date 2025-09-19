@@ -28,6 +28,7 @@ namespace PlentyFishFramework
         public UnityEvent<ICanDragComponentMono> onDestroy = new UnityEvent<ICanDragComponentMono>();
         public int textIndex = 1;
         public bool isCanBeDragInSlot = true;
+        public bool isPlayHoverAudio = true;
         public string hoverAudioName = "token_hover_OLD";
         //public bool IsCanBeDragSlot = true;
 
@@ -43,7 +44,7 @@ namespace PlentyFishFramework
             return ProjectWinterArchitecture.Interface;
         }
         // 鼠标点下时记录位置并重置拖拽状态
-        public void OnPointerDown(PointerEventData eventData)
+        public virtual void OnPointerDown(PointerEventData eventData)
         {
             startPointerPos = eventData.position;
             isDragging = false;
@@ -144,6 +145,7 @@ namespace PlentyFishFramework
 
         public virtual void OnPointerEnter(PointerEventData eventData)
         {
+            if (isPlayHoverAudio == false) return;
             UtilSystem.PlaySound(hoverAudioName);
         }
     }

@@ -36,7 +36,6 @@ public interface ICanBeStack
 
     public GameObject GetGameobject();
 
-
 }
 public interface ITableElement : ICanBeStack,ICanBelongToSlotMono
 {
