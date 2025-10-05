@@ -27,7 +27,7 @@
 
 飞书文档链接: [ProjectWinter项目流程结构图]
 (https://rcn48j0aj0ru.feishu.cn/wiki/CikrwqgddiwYlbkMItKccyLvnqb?from=from_copylink)  
-Bilibili 视频链接: https://www.bilibili.com/video/example  
+Bilibili 视频链接: https://www.bilibili.com/video/BV1eyxuzeEGg/  
 GitHub 项目页面: https://github.com/FalckWynter/ProjectWinterRebuild/  
 
 ## 联系方式
