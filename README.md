@@ -2,6 +2,7 @@
 # Unity密教模拟器类卡牌游戏教程样例工程 / Unity Cultist Simulator-like Card Game Tutorial Project
 
 本项目是一个基于 **Qframework** 开发的开源 Unity 工程，主要目标是作为学习和参考示例，演示如何实现一款类《密教模拟器》的卡牌游戏系统。  
+26/3/11 由于几个分支项目验证为不通过，密教模拟器源码拆解将替代现有项目继续更新
 
 ## 协议
 本项目遵守 **MIT 协议**，免费开源共享。  
